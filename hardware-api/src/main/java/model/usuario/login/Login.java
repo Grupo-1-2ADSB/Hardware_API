@@ -25,7 +25,12 @@ public class Login {
         this.senha = senha;
     }
 
-    public boolean verificarCredenciais(String usuario, String senha) {
-        return this.usuario.equals(usuario) && this.senha.equals(senha);
+    public Boolean verificarCredenciais(String usuarioVar, String senhaVar) {
+        if (this.usuario.equals(usuarioVar) && this.senha.equals(senhaVar)) {
+            return true;
+        } else {
+            return false;
+        }
     }
+
 }
