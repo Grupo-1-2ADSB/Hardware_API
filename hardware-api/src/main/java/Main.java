@@ -81,8 +81,6 @@ public class Main {
             System.out.println(sistema);
             System.out.println("=====================================");
 
-            for (int i = 0; i < 10; i++) {
-
                 Integer opcaoDesejada;
                 do {
                     System.out.println("""
@@ -124,7 +122,6 @@ public class Main {
                     }
                 } while (!opcaoDesejada.equals(5));
 
-            }
 
         } else {
             System.out.println("Usuário ou senha incorretos. Tente novamente mais tarde");
