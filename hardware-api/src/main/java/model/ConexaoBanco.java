@@ -1,23 +1,19 @@
 package model;
 
-import org.apache.commons.dbcp2.BasicDataSource;
-import org.springframework.jdbc.core.JdbcTemplate;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class ConexaoBanco {
-    private JdbcTemplate conexaoDoBanco;
 
-    public ConexaoBanco(){
-        BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setDriverClassName("");
-        dataSource.setUrl("");
-        dataSource.setUsername("");
-        dataSource.setPassword("");
+    public static Connection con() throws SQLException{
+        try {
+            return DriverManager.getConnection("jdbc:mysql://localhost/medtech", "root", "kauanunes");
+        } catch (SQLException e){
+            System.out.println("Deu erro aqui");
+            return null;
+        }
 
-        conexaoDoBanco = new JdbcTemplate(dataSource);
-    }
-
-    public JdbcTemplate getConexaoDoBanco(){
-        return conexaoDoBanco;
     }
 
 }

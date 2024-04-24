@@ -3,41 +3,32 @@ import com.github.britooo.looca.api.group.discos.Disco;
 import com.github.britooo.looca.api.group.discos.DiscoGrupo;
 import com.github.britooo.looca.api.group.memoria.Memoria;
 import com.github.britooo.looca.api.group.sistema.Sistema;
+import com.mysql.cj.util.StringUtils;
+import dao.UsuarioDAO;
 import model.ConexaoBanco;
 import model.componente.armazenamento.Armazenamento;
 import model.componente.cpu.MonitoramentoCpu;
 import model.componente.memoria.MonitoramentoMemoria;
 import model.componente.rede.MonitoramentoRede;
-import model.usuario.login.Login;
+import model.usuario.Usuario;
 import org.checkerframework.checker.units.qual.A;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         Looca looca = new Looca();
         Armazenamento disco01 = new Armazenamento();
         MonitoramentoMemoria memoria01 = new MonitoramentoMemoria();
         MonitoramentoCpu cpu01 = new MonitoramentoCpu();
         MonitoramentoRede rede01 = new MonitoramentoRede();
 
-        ///ConexaoBanco conexao = new ConexaoBanco();
-        ///JdbcTemplate con = conexao.getConexaoDoBanco();
-
-        ///con.execute("DROP TABLE IF EXISTS usuario");
-
-        ///con.execute("""
-        ///CREATE TABLE usuario (
-        ///idUsuario INT PRIMARY KEY AUTO_INCREMENT,
-        ///nomeUser VARCHAR(45),
-        ///email VARCHAR(45),
-        ///senha VARCHAR(45)
-        ///)
-        ///""");
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
 
         System.out.println("""
                  __  __          _ _____         _    \s
@@ -54,12 +45,9 @@ public class Main {
         System.out.print("Digite sua senha: ");
         String senhaUsuario = scanner.nextLine();
 
-        Login login = new Login(nomeUsuario, senhaUsuario);
+        Usuario usuario = usuarioDAO.retornaUsuario(nomeUsuario, senhaUsuario);
 
-        String usuarioVar = "kaua@gmail.com";
-        String senhaVar = "urubu100";
-
-        if (login.verificarCredenciais(usuarioVar, senhaVar)){
+        if (!StringUtils.isNullOrEmpty(usuario.getNomeUser())){
 
             System.out.println("Login bem-sucedido!");
             System.out.print("Pegando os dados do seu computador: ");
