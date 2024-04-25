@@ -15,9 +15,10 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
-    private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws SQLException {
+        Scanner scanner = new Scanner(System.in);
+
         Looca looca = new Looca();
         Armazenamento disco01 = new Armazenamento();
         MonitoramentoMemoria memoria01 = new MonitoramentoMemoria();
@@ -25,6 +26,18 @@ public class Main {
         MonitoramentoRede rede01 = new MonitoramentoRede();
 
         UsuarioDAO usuarioDAO = new UsuarioDAO();
+
+        Integer total2 = 25;
+        System.out.print("Inicializando: [");
+        for (int i = 0; i <= total2; i++) {
+            System.out.print("█");
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("] Concluído!");
 
         System.out.println("""
                  __  __          _ _____         _    \s
@@ -87,6 +100,7 @@ public class Main {
                         case 2:
                             System.out.println("Você escolheu visualizar CPU:");
                             System.out.println(cpu01.exibeCpu());
+                            System.out.println();
                             break;
                         case 3:
                             System.out.println("Você escolheu visualizar Memoria RAM:");
@@ -96,6 +110,7 @@ public class Main {
                             System.out.println("Você escolheu visualizar Rede:");
                             System.out.println(rede01.exibeRedeP());
                             System.out.println(rede01.exibeRede());
+                            System.out.println();
                             break;
                         case 5:
                             System.out.println("Saindo...");
@@ -104,8 +119,8 @@ public class Main {
                             System.out.println("Opção inválida.");
                             break;
                     }
-                } while (!opcaoDesejada.equals(5));
 
+                } while (!opcaoDesejada.equals(5));
 
         } else {
             System.out.println("Usuário ou senha incorretos. Tente novamente mais tarde");
@@ -114,6 +129,8 @@ public class Main {
 
         System.out.println("=====================================");
         System.out.println();
+        scanner.close();
+        System.exit(1);
 
     }
 }
