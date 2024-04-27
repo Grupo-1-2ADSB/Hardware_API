@@ -56,7 +56,7 @@ public class Main {
 
         Usuario usuario = usuarioDAO.retornaUsuario(nomeUsuario, senhaUsuario);
 
-        if (!StringUtils.isNullOrEmpty(usuario.getNomeUser())){
+        if (usuario != null && !StringUtils.isNullOrEmpty(usuario.getNomeUser())){
 
             System.out.println("Login bem-sucedido!");
             System.out.print("Pegando os dados do seu computador: ");
@@ -113,7 +113,17 @@ public class Main {
                             System.out.println();
                             break;
                         case 5:
-                            System.out.println("Saindo...");
+                            Integer total3 = 5;
+                            System.out.print("Saindo: [");
+                            for (int i = 0; i <= total3; i++) {
+                                System.out.print(".");
+                                try {
+                                    Thread.sleep(100);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            System.out.println("] Concluído!");
                             break;
                         default:
                             System.out.println("Opção inválida.");
