@@ -49,12 +49,12 @@ public class Main {
 
         System.out.println("=====================================");
 
-        System.out.print("Digite seu nome de usuário: ");
-        String nomeUsuario = scanner.nextLine();
+        System.out.print("Digite seu email: ");
+        String emailUsuario = scanner.nextLine();
         System.out.print("Digite sua senha: ");
         String senhaUsuario = scanner.nextLine();
 
-        Usuario usuario = usuarioDAO.retornaUsuario(nomeUsuario, senhaUsuario);
+        Usuario usuario = usuarioDAO.retornaUsuario(emailUsuario, senhaUsuario);
 
         if (usuario != null && !StringUtils.isNullOrEmpty(usuario.getNomeUser())){
 
@@ -86,7 +86,8 @@ public class Main {
                     2 - CPU
                     3 - Memoria RAM
                     4 - Rede
-                    5 - Sair
+                    5 - Verificar Processos
+                    6 - Sair
                     """);
                     opcaoDesejada = scanner.nextInt();
 
@@ -113,6 +114,9 @@ public class Main {
                             System.out.println();
                             break;
                         case 5:
+
+                            break;
+                        case 6:
                             Integer total3 = 5;
                             System.out.print("Saindo: [");
                             for (int i = 0; i <= total3; i++) {
@@ -130,7 +134,7 @@ public class Main {
                             break;
                     }
 
-                } while (!opcaoDesejada.equals(5));
+                } while (!opcaoDesejada.equals(6));
 
         } else {
             System.out.println("Usuário ou senha incorretos. Tente novamente mais tarde");

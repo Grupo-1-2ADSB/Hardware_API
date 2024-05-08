@@ -12,14 +12,14 @@ import java.sql.SQLException;
 
 public class UsuarioDAO {
 
-    public Usuario retornaUsuario(String userVerificar, String senhaVerificar) throws SQLException {
+    public Usuario retornaUsuario(String emailVerificar, String senhaVerificar) throws SQLException {
 
         ConexaoBanco conexaoBanco = new ConexaoBanco();
         JdbcTemplate conexao = conexaoBanco.getJdbcTemplate();
 
         Usuario usuario = null;
         try {
-             usuario = conexao.queryForObject("SELECT * FROM usuario WHERE nomeUser = '%s' AND senha = '%s'".formatted(userVerificar, senhaVerificar), new BeanPropertyRowMapper<>(Usuario.class));
+             usuario = conexao.queryForObject("SELECT * FROM usuario WHERE email = '%s' AND senha = '%s'".formatted(emailVerificar, senhaVerificar), new BeanPropertyRowMapper<>(Usuario.class));
         } catch (Exception e) {
             return usuario;
         }
