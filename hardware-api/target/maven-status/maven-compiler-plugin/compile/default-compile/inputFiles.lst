@@ -1,9 +1,9 @@
-C:\Users\kauas\Desktop\Projetos\jar-individual-KauNunes\hardware-api\src\main\java\com\medtech\model\componente\rede\MonitoramentoRede.java
-C:\Users\kauas\Desktop\Projetos\jar-individual-KauNunes\hardware-api\src\main\java\com\medtech\dao\UsuarioDAO.java
-C:\Users\kauas\Desktop\Projetos\jar-individual-KauNunes\hardware-api\src\main\java\com\medtech\model\componente\armazenamento\Armazenamento.java
-C:\Users\kauas\Desktop\Projetos\jar-individual-KauNunes\hardware-api\src\main\java\com\medtech\model\componente\cpu\MonitoramentoCpu.java
-C:\Users\kauas\Desktop\Projetos\jar-individual-KauNunes\hardware-api\src\main\java\com\medtech\model\componente\memoria\MonitoramentoMemoria.java
-C:\Users\kauas\Desktop\Projetos\jar-individual-KauNunes\hardware-api\src\main\java\com\medtech\Main.java
-C:\Users\kauas\Desktop\Projetos\jar-individual-KauNunes\hardware-api\src\main\java\com\medtech\model\ConexaoBanco.java
-C:\Users\kauas\Desktop\Projetos\jar-individual-KauNunes\hardware-api\src\main\java\com\medtech\model\usuario\Usuario.java
-C:\Users\kauas\Desktop\Projetos\jar-individual-KauNunes\hardware-api\src\main\java\com\medtech\model\componente\computador\Computador.java
+C:\Users\kauas\Desktop\Projeto PI\Hardware_API\hardware-api\src\main\java\com\medtech\dao\UsuarioDAO.java
+C:\Users\kauas\Desktop\Projeto PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\memoria\MonitoramentoMemoria.java
+C:\Users\kauas\Desktop\Projeto PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\computador\Computador.java
+C:\Users\kauas\Desktop\Projeto PI\Hardware_API\hardware-api\src\main\java\com\medtech\Main.java
+C:\Users\kauas\Desktop\Projeto PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\cpu\MonitoramentoCpu.java
+C:\Users\kauas\Desktop\Projeto PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\ConexaoBanco.java
+C:\Users\kauas\Desktop\Projeto PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\usuario\Usuario.java
+C:\Users\kauas\Desktop\Projeto PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\armazenamento\Armazenamento.java
+C:\Users\kauas\Desktop\Projeto PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\rede\MonitoramentoRede.java

@@ -26,8 +26,6 @@ public class MonitoramentoCpu {
         Cpus Lógicas: %d
         Uso da Cpu: %.2f""",
                 cpuFabricante, cpuId, cpuIdentificador, cpuNome, cpuMicro, cpuFreq, cpuFisicas, cpuLogicas, cpuUso);
-
-
         return cpuInfo;
     }
 }

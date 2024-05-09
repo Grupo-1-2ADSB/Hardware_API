@@ -49,12 +49,12 @@ public class Main {
 
         System.out.println("=====================================");
 
-        System.out.print("Digite seu email: ");
-        String emailUsuario = scanner.nextLine();
+        System.out.print("Digite seu nome de usuário: ");
+        String nomeUsuario = scanner.nextLine();
         System.out.print("Digite sua senha: ");
         String senhaUsuario = scanner.nextLine();
 
-        Usuario usuario = usuarioDAO.retornaUsuario(emailUsuario, senhaUsuario);
+        Usuario usuario = usuarioDAO.retornaUsuario(nomeUsuario, senhaUsuario);
 
         if (usuario != null && !StringUtils.isNullOrEmpty(usuario.getNomeUser())){
 
@@ -104,7 +104,7 @@ public class Main {
                             break;
                         case 3:
                             System.out.println("Você escolheu visualizar Memoria RAM:");
-                            System.out.println(memoria01.exibirMemoria());
+                            System.out.println(memoria01.exibeMemoria());
                             break;
                         case 4:
                             System.out.println("Você escolheu visualizar Rede:");
