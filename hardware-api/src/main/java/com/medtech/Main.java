@@ -86,8 +86,7 @@ public class Main {
                     2 - CPU
                     3 - Memoria RAM
                     4 - Rede
-                    5 - Verificar Processos
-                    6 - Sair
+                    5 - Sair
                     """);
                     opcaoDesejada = scanner.nextInt();
 
@@ -105,7 +104,7 @@ public class Main {
                             break;
                         case 3:
                             System.out.println("Você escolheu visualizar Memoria RAM:");
-                            System.out.println(memoria01.exibeMemoria());
+                            System.out.println(memoria01.exibirMemoria());
                             break;
                         case 4:
                             System.out.println("Você escolheu visualizar Rede:");
@@ -114,9 +113,6 @@ public class Main {
                             System.out.println();
                             break;
                         case 5:
-
-                            break;
-                        case 6:
                             Integer total3 = 5;
                             System.out.print("Saindo: [");
                             for (int i = 0; i <= total3; i++) {
@@ -134,7 +130,7 @@ public class Main {
                             break;
                     }
 
-                } while (!opcaoDesejada.equals(6));
+                } while (!opcaoDesejada.equals(5));
 
         } else {
             System.out.println("Usuário ou senha incorretos. Tente novamente mais tarde");
