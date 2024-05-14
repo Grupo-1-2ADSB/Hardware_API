@@ -17,6 +17,9 @@ public abstract class Hardware {
         this.descricaoHardware = descricaoHardware;
     }
 
+    public Hardware() {
+    }
+
     public String getNomeHardware() {
         return nomeHardware;
     }

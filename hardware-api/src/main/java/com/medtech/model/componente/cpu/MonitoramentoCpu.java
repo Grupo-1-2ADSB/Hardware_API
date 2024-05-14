@@ -19,6 +19,9 @@ public class MonitoramentoCpu extends Hardware {
         super(nomeHardware, unidadeDeMedida, medida, descricaoHardware);
     }
 
+    public MonitoramentoCpu() {
+    }
+
     public String exibeCpu() {
         String cpuInfo = String.format("""
         Fabricante: %s

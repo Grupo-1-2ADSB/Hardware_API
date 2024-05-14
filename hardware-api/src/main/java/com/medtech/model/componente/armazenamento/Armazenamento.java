@@ -19,6 +19,9 @@ public class Armazenamento extends Hardware {
         super(nomeHardware, unidadeDeMedida, medida, descricaoHardware);
     }
 
+    public Armazenamento() {
+    }
+
     public List<Disco> exibeDiscos() {
         return discos;
     }

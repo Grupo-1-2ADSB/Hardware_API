@@ -13,6 +13,9 @@ public class MonitoramentoRede extends Hardware {
         super(nomeHardware, unidadeDeMedida, medida, descricaoHardware);
     }
 
+    public MonitoramentoRede() {
+    }
+
     public String exibeRede() {
         return rede;
     }

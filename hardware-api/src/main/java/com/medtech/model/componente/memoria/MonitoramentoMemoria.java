@@ -12,6 +12,9 @@ public class MonitoramentoMemoria extends Hardware {
         super(nomeHardware, unidadeDeMedida, medida, descricaoHardware);
     }
 
+    public MonitoramentoMemoria() {
+    }
+
     public Memoria exibeMemoria() {
         return memoria;
     }
