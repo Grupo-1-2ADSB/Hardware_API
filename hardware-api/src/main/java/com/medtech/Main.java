@@ -78,59 +78,19 @@ public class Main {
             System.out.println(sistema);
             System.out.println("=====================================");
 
-                Integer opcaoDesejada;
-                do {
-                    System.out.println("""
-                    Qual processo deseja visualizar?
-                    1 - Armazenamento
-                    2 - CPU
-                    3 - Memoria RAM
-                    4 - Rede
-                    5 - Sair
-                    """);
-                    opcaoDesejada = scanner.nextInt();
-
-                    switch (opcaoDesejada) {
-                        case 1:
-                            System.out.println("Você escolheu visualizar Armazenamento:");
-                            for (Disco disco : disco01.exibeDiscos()) {
-                                System.out.println(disco);
-                            }
-                            break;
-                        case 2:
-                            System.out.println("Você escolheu visualizar CPU:");
-                            System.out.println(cpu01.exibeCpu());
-                            System.out.println();
-                            break;
-                        case 3:
-                            System.out.println("Você escolheu visualizar Memoria RAM:");
-                            System.out.println(memoria01.exibeMemoria());
-                            break;
-                        case 4:
-                            System.out.println("Você escolheu visualizar Rede:");
-                            System.out.println(rede01.exibeRedeP());
-                            System.out.println(rede01.exibeRede());
-                            System.out.println();
-                            break;
-                        case 5:
-                            Integer total3 = 5;
-                            System.out.print("Saindo: [");
-                            for (int i = 0; i <= total3; i++) {
-                                System.out.print(".");
-                                try {
-                                    Thread.sleep(100);
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                            System.out.println("] Concluído!");
-                            break;
-                        default:
-                            System.out.println("Opção inválida.");
-                            break;
+            try {
+                    for (Disco disco : disco01.exibeDiscos()) {
+                        System.out.println(disco); // Imprimir informações do disco
+                        double porcentagemUsoDisco = disco01.porcentagemDeUso(); // Obter porcentagem de uso atual
+                        System.out.println("Uso do disco: %.2f".formatted(porcentagemUsoDisco)); // Imprimir porcentagem de uso
+                        Thread.sleep(5000); // Atraso de 5 segundos
                     }
+                    System.out.println(cpu01.exibeCpu());
+                    System.out.println(memoria01.exibeMemoria());
+            } catch (InterruptedException e) {
 
-                } while (!opcaoDesejada.equals(5));
+            }
+
 
         } else {
             System.out.println("Usuário ou senha incorretos. Tente novamente mais tarde");

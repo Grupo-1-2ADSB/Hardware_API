@@ -17,8 +17,8 @@ public class ConexaoBanco {
 
         bds.setDriverClassName("com.mysql.cj.jdbc.Driver");
         bds.setUrl("jdbc:mysql://localhost:3306/medtech");
-        bds.setPassword("kauanunes");
-        bds.setUsername("root");
+        bds.setPassword("URUBU100");
+        bds.setUsername("user_medtech");
         jdbcTemplate = new JdbcTemplate(bds);
     }
 
