@@ -24,16 +24,13 @@ public class MonitoramentoCpu extends Hardware {
 
     public String exibeCpu() {
         String cpuInfo = String.format("""
+        CPU
         Fabricante: %s
         Id: %s
         Identificador: %s
         Nome: %s
-        Micro-arquitetura: %s
-        Frequência: %s
-        Cpus Físicas: %d
-        Cpus Lógicas: %d
         Uso da Cpu: %.2f""",
-                cpuFabricante, cpuId, cpuIdentificador, cpuNome, cpuMicro, cpuFreq, cpuFisicas, cpuLogicas, cpuUso);
+                cpuFabricante, cpuId, cpuIdentificador, cpuNome, cpuUso);
         return cpuInfo;
     }
 }
