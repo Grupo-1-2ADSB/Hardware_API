@@ -1,9 +1,8 @@
 package com.medtech;
 
 import com.github.britooo.looca.api.core.Looca;
-import com.github.britooo.looca.api.group.discos.Disco;
 import com.github.britooo.looca.api.group.sistema.Sistema;
-import com.mysql.cj.util.StringUtils;
+import com.medtech.dao.ComponenteDAO;
 import com.medtech.dao.UsuarioDAO;
 import com.medtech.model.componente.armazenamento.Armazenamento;
 import com.medtech.model.componente.cpu.MonitoramentoCpu;
@@ -26,10 +25,10 @@ public class Main {
         MonitoramentoRede rede01 = new MonitoramentoRede();
 
         UsuarioDAO usuarioDAO = new UsuarioDAO();
+        ComponenteDAO componenteDAO = new ComponenteDAO();
 
-        Integer total2 = 25;
         System.out.print("Inicializando: [");
-        for (int i = 0; i <= total2; i++) {
+        for (int i = 0; i <= 25; i++) {
             System.out.print("█");
             try {
                 Thread.sleep(100);
@@ -56,14 +55,12 @@ public class Main {
 
         Usuario usuario = usuarioDAO.retornaUsuario(nomeUsuario, senhaUsuario);
 
-        if (usuario != null && !StringUtils.isNullOrEmpty(usuario.getNomeUser())){
-
+        if (usuario != null && !usuario.getNomeUser().isEmpty()) {
             System.out.println("Login bem-sucedido!");
             System.out.print("Pegando os dados do seu computador: ");
 
-            Integer total = 25;
             System.out.print("Carregando: [");
-            for (int i = 0; i <= total; i++) {
+            for (int i = 0; i <= 25; i++) {
                 System.out.print("█");
                 try {
                     Thread.sleep(100);
@@ -78,20 +75,25 @@ public class Main {
             System.out.println(sistema);
             System.out.println("=====================================");
 
-            try {
-                    for (Disco disco : disco01.exibeDiscos()) {
-                        System.out.println(disco); // Imprimir informações do disco
-                        double porcentagemUsoDisco = disco01.porcentagemDeUso(); // Obter porcentagem de uso atual
-                        System.out.println("Uso do disco: %.2f".formatted(porcentagemUsoDisco)); // Imprimir porcentagem de uso
-                        Thread.sleep(5000); // Atraso de 5 segundos
-                    }
-                    System.out.println(cpu01.exibeCpu());
-                    System.out.println(memoria01.exibeMemoria());
-            } catch (InterruptedException e) {
+            while (true) {
+                try {
+                    Thread.sleep(2000);
+                    System.out.println();
+                    System.out.println("Inserindo no Banco de Dados..");
+                    memoria01.exibeMemoria();
+                    System.out.println(cpu01.exibeUsoCpuGHz());
+                    double armazenamentoUsadoGB = disco01.getArmazenamentoUsadoGB();
+                    System.out.printf("Armazenamento Usado: %.2f GB%n", armazenamentoUsadoGB);
 
+                    // Inserir os dados no banco de dados
+                    componenteDAO.inserirUsoMemoria(memoria01);
+                    componenteDAO.inserirUsoArmazenamento(disco01);
+                    componenteDAO.inserirUsoCpu(cpu01);
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-
-
         } else {
             System.out.println("Usuário ou senha incorretos. Tente novamente mais tarde");
             scanner.close();
@@ -101,6 +103,5 @@ public class Main {
         System.out.println();
         scanner.close();
         System.exit(1);
-
     }
 }

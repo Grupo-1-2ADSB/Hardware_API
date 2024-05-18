@@ -51,4 +51,8 @@ public abstract class Hardware {
     public void setDescricaoHardware(String descricaoHardware) {
         this.descricaoHardware = descricaoHardware;
     }
+
+    public int getIdComputador() {
+        return 0;
+    }
 }
