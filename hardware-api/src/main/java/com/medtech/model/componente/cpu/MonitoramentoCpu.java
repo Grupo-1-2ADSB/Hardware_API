@@ -45,6 +45,10 @@ public class MonitoramentoCpu extends Hardware {
         return cpuInfo;
     }
 
+    public String getIdCPU(){
+        return cpuId;
+    }
+
     public Double getUsoCpuGHz() {
         return getCpuFreqGHz();
     }
