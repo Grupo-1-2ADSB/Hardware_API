@@ -77,7 +77,7 @@ public class Main {
 
             while (true) {
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(3000);
                     System.out.println();
                     System.out.println("Inserindo no Banco de Dados..");
                     memoria01.exibeMemoria();

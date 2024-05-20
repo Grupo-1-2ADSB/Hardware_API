@@ -39,14 +39,14 @@ public class MonitoramentoCpu extends Hardware {
         Identificador: %s
         Nome: %s
         Frequência: %.2f GHz
-        Uso da CPU: %.2f
+        Uso da CPU: %.2f%%
         """,
                 cpuFabricante, cpuId, cpuIdentificador, cpuNome, getCpuFreqGHz(), cpuUso);
         return cpuInfo;
     }
 
     public Double getUsoCpuGHz() {
-        return getCpuUsoGHz();
+        return getCpuFreqGHz();
     }
 
 }
