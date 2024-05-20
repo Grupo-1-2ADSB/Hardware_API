@@ -31,7 +31,7 @@ public class ComponenteDAO {
     public void inserirUsoArmazenamento(Armazenamento armazenamento) throws SQLException {
         String sql = "INSERT INTO Registro (valor, dataHora, fkComputador, fkHardware) VALUES (?, ?, ?, ?)";
         try (PreparedStatement stmt = conexaoBanco.getConexao().prepareStatement(sql)) {
-            stmt.setDouble(1, armazenamento.getArmazenamentoUsadoGB());
+            stmt.setDouble(1, armazenamento.getVolumes());
             stmt.setTimestamp(2, new java.sql.Timestamp(new Date().getTime()));
             stmt.setInt(3, 1); // ID do computador mocado para teste
             stmt.setInt(4, 2); // Supondo que 2 seja o ID correspondente ao hardware de armazenamento
@@ -42,7 +42,7 @@ public class ComponenteDAO {
     public void inserirUsoCpu(MonitoramentoCpu cpu) throws SQLException {
         String sql = "INSERT INTO Registro (valor, dataHora, fkComputador, fkHardware) VALUES (?, ?, ?, ?)";
         try (PreparedStatement stmt = conexaoBanco.getConexao().prepareStatement(sql)) {
-            stmt.setDouble(1, Double.parseDouble(cpu.exibeUsoCpuGHz()));
+            stmt.setDouble(1, cpu.getUsoCpuGHz());
             stmt.setTimestamp(2, new java.sql.Timestamp(new Date().getTime()));
             stmt.setInt(3, 1); // ID do computador mocado para teste
             stmt.setInt(4, 3); // Supondo que 3 seja o ID correspondente ao hardware de CPU

@@ -81,10 +81,8 @@ public class Main {
                     System.out.println();
                     System.out.println("Inserindo no Banco de Dados..");
                     memoria01.exibeMemoria();
-                    System.out.println(cpu01.exibeUsoCpuGHz());
-                    double armazenamentoUsadoGB = disco01.getArmazenamentoUsadoGB();
-                    System.out.printf("Armazenamento Usado: %.2f GB%n", armazenamentoUsadoGB);
-
+                    System.out.println("Uso da CPU: %.2f GHz".formatted(cpu01.getUsoCpuGHz()));
+                    System.out.println("Armazenamento em uso: %.2f GB".formatted(disco01.getVolumes()));
                     // Inserir os dados no banco de dados
                     componenteDAO.inserirUsoMemoria(memoria01);
                     componenteDAO.inserirUsoArmazenamento(disco01);
