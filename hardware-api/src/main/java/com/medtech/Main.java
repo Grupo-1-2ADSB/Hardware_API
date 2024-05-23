@@ -79,7 +79,7 @@ public class Main {
                 Thread.sleep(3000);
 
                 double memoriaEmUso = memoria.getMemoriaEmUsoGB();
-                double usoCpu = cpu.getUsoCpuGHz();
+                double usoCpu = cpu.getCpuFreqGHz();
                 double armazenamentoEmUso = armazenamento.getVolumes();
 
                 componenteDAO.inserirUsoMemoria(memoria);

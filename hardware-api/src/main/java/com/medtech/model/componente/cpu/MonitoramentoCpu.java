@@ -29,8 +29,4 @@ public class MonitoramentoCpu extends Hardware {
         return cpuId;
     }
 
-    public Double getUsoCpuGHz() {
-        return getCpuFreqGHz();
-    }
-
 }

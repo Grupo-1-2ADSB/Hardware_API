@@ -77,7 +77,7 @@ public class ComponenteDAO {
     public void inserirUsoCpu(MonitoramentoCpu cpu) throws SQLException {
         try (Connection conexao = conexaoBanco.getConexao()) {
             inserirComputadorSeNecessario(conexao, cpu01.getIdCPU());
-            inserirRegistro(conexao, cpu.getUsoCpuGHz(), cpu01.getIdCPU(), 3); // 3 é o ID correspondente ao hardware de CPU
+            inserirRegistro(conexao, cpu.getCpuFreqGHz(), cpu01.getIdCPU(), 3); // 3 é o ID correspondente ao hardware de CPU
         }
     }
 }
