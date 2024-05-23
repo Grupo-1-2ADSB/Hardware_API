@@ -1,14 +1,12 @@
 package com.medtech;
 
 import com.github.britooo.looca.api.core.Looca;
-import com.github.britooo.looca.api.group.discos.Disco;
 import com.github.britooo.looca.api.group.sistema.Sistema;
-import com.mysql.cj.util.StringUtils;
+import com.medtech.dao.ComponenteDAO;
 import com.medtech.dao.UsuarioDAO;
 import com.medtech.model.componente.armazenamento.Armazenamento;
 import com.medtech.model.componente.cpu.MonitoramentoCpu;
 import com.medtech.model.componente.memoria.MonitoramentoMemoria;
-import com.medtech.model.componente.rede.MonitoramentoRede;
 import com.medtech.model.usuario.Usuario;
 
 import java.sql.SQLException;
@@ -23,22 +21,24 @@ public class Main {
         Armazenamento disco01 = new Armazenamento();
         MonitoramentoMemoria memoria01 = new MonitoramentoMemoria();
         MonitoramentoCpu cpu01 = new MonitoramentoCpu();
-        MonitoramentoRede rede01 = new MonitoramentoRede();
 
         UsuarioDAO usuarioDAO = new UsuarioDAO();
+        ComponenteDAO componenteDAO = new ComponenteDAO();
 
-        Integer total2 = 25;
-        System.out.print("Inicializando: [");
-        for (int i = 0; i <= total2; i++) {
-            System.out.print("█");
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+        exibirBanner();
+
+        Usuario usuario = autenticarUsuario(scanner, usuarioDAO);
+        if (usuario != null && !usuario.getNomeUser().isEmpty()) {
+            exibirSistema(looca);
+            iniciarColetaDeDados(memoria01, cpu01, disco01, componenteDAO);
+        } else {
+            System.out.println("Usuário ou senha incorretos. Tente novamente mais tarde.");
         }
-        System.out.println("] Concluído!");
 
+        scanner.close();
+    }
+
+    private static void exibirBanner() {
         System.out.println("""
                  __  __          _ _____         _    \s
                 |  \\/  | ___  __| |_   _|__  ___| |__ \s
@@ -46,61 +46,58 @@ public class Main {
                 | |  | |  __/ (_| | | |  __/ (__| | | |
                 |_|  |_|\\___|\\__,_| |_|\\___|\\___|_| |_|
                                                       \s""");
-
         System.out.println("=====================================");
+    }
 
+    private static Usuario autenticarUsuario(Scanner scanner, UsuarioDAO usuarioDAO) throws SQLException {
         System.out.print("Digite seu nome de usuário: ");
         String nomeUsuario = scanner.nextLine();
         System.out.print("Digite sua senha: ");
         String senhaUsuario = scanner.nextLine();
-
-        Usuario usuario = usuarioDAO.retornaUsuario(nomeUsuario, senhaUsuario);
-
-        if (usuario != null && !StringUtils.isNullOrEmpty(usuario.getNomeUser())){
-
-            System.out.println("Login bem-sucedido!");
-            System.out.print("Pegando os dados do seu computador: ");
-
-            Integer total = 25;
-            System.out.print("Carregando: [");
-            for (int i = 0; i <= total; i++) {
-                System.out.print("█");
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            System.out.println("] Concluído!");
-            System.out.println();
-            Sistema sistema = looca.getSistema();
-            System.out.println(sistema);
-            System.out.println("=====================================");
-
-            try {
-                    for (Disco disco : disco01.exibeDiscos()) {
-                        System.out.println(disco); // Imprimir informações do disco
-                        double porcentagemUsoDisco = disco01.porcentagemDeUso(); // Obter porcentagem de uso atual
-                        System.out.println("Uso do disco: %.2f".formatted(porcentagemUsoDisco)); // Imprimir porcentagem de uso
-                        Thread.sleep(5000); // Atraso de 5 segundos
-                    }
-                    System.out.println(cpu01.exibeCpu());
-                    System.out.println(memoria01.exibeMemoria());
-            } catch (InterruptedException e) {
-
-            }
-
-
-        } else {
-            System.out.println("Usuário ou senha incorretos. Tente novamente mais tarde");
-            scanner.close();
-        }
-
-        System.out.println("=====================================");
-        System.out.println();
-        scanner.close();
-        System.exit(1);
-
+        return usuarioDAO.retornaUsuario(nomeUsuario, senhaUsuario);
     }
+
+    private static void exibirSistema(Looca looca) {
+        System.out.print("Pegando os dados do seu computador: ");
+        for (int i = 0; i <= 25; i++) {
+            System.out.print("█");
+            try {
+                Thread.sleep(40);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("] Concluído!");
+        Sistema sistema = looca.getSistema();
+        System.out.println(sistema);
+        System.out.println("=====================================");
+    }
+
+    private static void iniciarColetaDeDados(MonitoramentoMemoria memoria, MonitoramentoCpu cpu, Armazenamento armazenamento, ComponenteDAO componenteDAO) {
+        while (true) {
+            try {
+                Thread.sleep(3000);
+
+                double memoriaEmUso = memoria.getMemoriaEmUsoGB();
+                double usoCpu = cpu.getCpuFreqGHz();
+                double armazenamentoEmUso = armazenamento.getVolumes();
+
+                componenteDAO.inserirUsoMemoria(memoria);
+                componenteDAO.inserirUsoArmazenamento(armazenamento);
+                componenteDAO.inserirUsoCpu(cpu);
+
+                System.out.println("Dados atuais:");
+                System.out.println("Uso da Memória: " + String.format("%.2f", memoriaEmUso) + " GB");
+                System.out.println("Uso da CPU: " + String.format("%.2f", usoCpu) + " GHz");
+                System.out.println("Armazenamento em uso: " + String.format("%.2f", armazenamentoEmUso) + " GB");
+                System.out.println();
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (SQLException e) {
+                System.out.println("Erro ao inserir dados no banco de dados: " + e.getMessage());
+            }
+        }
+    }
+
 }
