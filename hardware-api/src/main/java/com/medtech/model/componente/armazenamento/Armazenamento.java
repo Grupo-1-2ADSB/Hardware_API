@@ -9,8 +9,6 @@ import java.util.List;
 
 public class Armazenamento extends Hardware {
     private Looca looca = new Looca();
-    private List<Disco> discos = looca.getGrupoDeDiscos().getDiscos();
-
     private List<Volume> volumes = looca.getGrupoDeDiscos().getVolumes();
 
     public Armazenamento(String nomeHardware, String unidadeDeMedida, Double medida, String descricaoHardware) {
@@ -18,18 +16,6 @@ public class Armazenamento extends Hardware {
     }
 
     public Armazenamento() {
-    }
-
-    public double getArmazenamentoUsadoGB() {
-        long totalArmazenamento = 0;
-        long usadoArmazenamento = 0;
-
-        for (Disco disco : discos) {
-            totalArmazenamento += disco.getTamanho();
-            usadoArmazenamento += disco.getTamanho() - disco.getEscritas();
-        }
-
-        return usadoArmazenamento / 1_073_741_824.0; // Convertendo de bytes para GB
     }
 
     public double getVolumes(){

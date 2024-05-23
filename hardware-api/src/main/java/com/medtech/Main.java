@@ -27,17 +27,6 @@ public class Main {
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         ComponenteDAO componenteDAO = new ComponenteDAO();
 
-        System.out.print("Inicializando: [");
-        for (int i = 0; i <= 25; i++) {
-            System.out.print("█");
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        System.out.println("] Concluído!");
-
         System.out.println("""
                  __  __          _ _____         _    \s
                 |  \\/  | ___  __| |_   _|__  ___| |__ \s
@@ -97,9 +86,5 @@ public class Main {
             scanner.close();
         }
 
-        System.out.println("=====================================");
-        System.out.println();
-        scanner.close();
-        System.exit(1);
     }
 }

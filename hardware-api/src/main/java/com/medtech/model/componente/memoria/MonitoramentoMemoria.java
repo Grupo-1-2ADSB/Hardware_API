@@ -8,14 +8,6 @@ public class MonitoramentoMemoria extends Hardware {
     private Looca looca = new Looca();
     private Memoria memoria = looca.getMemoria();
 
-    public double getMemoriaTotalGB() {
-        return memoria.getTotal() / (1024.0 * 1024.0 * 1024.0);
-    }
-
-    public double getMemoriaDisponivelGB() {
-        return memoria.getDisponivel() / (1024.0 * 1024.0 * 1024.0);
-    }
-
     public double getMemoriaEmUsoGB() {
         return memoria.getEmUso() / (1024.0 * 1024.0 * 1024.0);
     }
