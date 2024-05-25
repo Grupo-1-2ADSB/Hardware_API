@@ -4,6 +4,7 @@ import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.sistema.Sistema;
 import com.medtech.dao.ComponenteDAO;
 import com.medtech.dao.UsuarioDAO;
+import com.medtech.inovacao.MemoryUsageFinisher;
 import com.medtech.model.componente.armazenamento.Armazenamento;
 import com.medtech.model.componente.cpu.MonitoramentoCpu;
 import com.medtech.model.componente.memoria.MonitoramentoMemoria;
@@ -75,6 +76,7 @@ public class Main {
 
     private static void iniciarColetaDeDados(MonitoramentoMemoria memoria, MonitoramentoCpu cpu, Armazenamento armazenamento, ComponenteDAO componenteDAO, String nomeUsuario) {
         while (true) {
+            MemoryUsageFinisher.checkMemoryUsage();
             try {
                 Thread.sleep(3000);
 
