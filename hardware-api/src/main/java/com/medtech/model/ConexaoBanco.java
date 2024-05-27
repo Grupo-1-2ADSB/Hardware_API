@@ -31,4 +31,14 @@ public class ConexaoBanco {
         // Obter uma conexão a partir do dataSource
         return dataSource.getConnection();
     }
+
+    public Connection getSqlServerConexao() throws SQLException {
+        BasicDataSource sqlServerDataSource = new BasicDataSource();
+        sqlServerDataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        sqlServerDataSource.setUrl("jdbc:sqlserver://54.161.72.58:1433;databaseName=medtech;trustServerCertificate=true");
+        sqlServerDataSource.setUsername("sa");
+        sqlServerDataSource.setPassword("urubu100");
+
+        return sqlServerDataSource.getConnection();
+    }
 }
