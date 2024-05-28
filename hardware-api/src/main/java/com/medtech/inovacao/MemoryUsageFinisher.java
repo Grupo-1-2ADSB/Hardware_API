@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class MemoryUsageFinisher {
 
-    private static final double ACCEPTABLE_MEMORY_USAGE_PERCENTAGE = 80.0; // 80% de uso de memória como limite
+    private static final double ACCEPTABLE_MEMORY_USAGE_PERCENTAGE = 85.0; // 85% de uso de memória como limite
     private static final List<String> ESSENTIAL_PROCESSES = Arrays.asList(
             "mysqld.exe", "MySQLWorkbench.exe", "System", "java.exe", "idea64.exe", "smss.exe", "csrss.exe", "wininit.exe", "services.exe", "lsass.exe", "lsm.exe", "svchost.exe", "winlogon.exe", "explorer.exe", "Windows Explorer", "taskhostw.exe", "taskbar.exe", "Taskbar", "shellExperienceHost.exe", "dwm.exe", "Desktop Window Manager", "POWERPNT.EXE", "Microsoft PowerPoint Background Task Handler", "OfficeService.exe"
     ); //Lista de Prioridade ou White List dos processos que não podem ser encerrados
@@ -78,15 +78,20 @@ public class MemoryUsageFinisher {
             System.out.println("Uso da memória acima do limite aceitável! Começando finalização preventiva de processos...");
             System.out.println();
 
-            for (int i = 0; i <= 10; i++) {
+            int limiteDaLeva = 10;
+
+            for (int i = 0; i <= limiteDaLeva; i++) {
                 String processName = processes.get(i).getProcessName();
                 double memoryUsage = processes.get(i).getMemoryUsage();
 
-                System.out.println("""
+                if (!isEssentialProcess(processName)) {
+                    System.out.println("""
                         Processo: %s , Uso de memória: %.2fMB""".formatted(processName, memoryUsage));
+                }
 
                 if (isEssentialProcess(processName)) {
                     System.out.println("Processo essencial encontrado: " + processName + ". Ignorando.");
+                    limiteDaLeva++;
                     continue; // Pular para a próxima iteração do loop
                 }
 
