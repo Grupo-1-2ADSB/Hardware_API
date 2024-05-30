@@ -8,37 +8,46 @@ import java.sql.SQLException;
 
 public class ConexaoBanco {
 
-    private BasicDataSource dataSource;
-    private JdbcTemplate jdbcTemplate;
+    private BasicDataSource mysqlDataSource;
+    private BasicDataSource sqlServerDataSource;
+    private JdbcTemplate mysqlJdbcTemplate;
+    private JdbcTemplate sqlServerJdbcTemplate;
 
     public ConexaoBanco() {
-        // Configuração do BasicDataSource
-        dataSource = new BasicDataSource();
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/medtech");
-        dataSource.setUsername("user_medtech");
-        dataSource.setPassword("URUBU100");
+        // Configuração do BasicDataSource para MySQL
+        mysqlDataSource = new BasicDataSource();
+        mysqlDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        mysqlDataSource.setUrl("jdbc:mysql://localhost:3306/medtech");
+        mysqlDataSource.setUsername("user_medtech");
+        mysqlDataSource.setPassword("URUBU100");
 
-        // Inicialização do JdbcTemplate com o dataSource
-        jdbcTemplate = new JdbcTemplate(dataSource);
-    }
+        // Inicialização do JdbcTemplate para MySQL
+        mysqlJdbcTemplate = new JdbcTemplate(mysqlDataSource);
 
-    public JdbcTemplate getJdbcTemplate() {
-        return jdbcTemplate;
-    }
-
-    public Connection getConexao() throws SQLException {
-        // Obter uma conexão a partir do dataSource
-        return dataSource.getConnection();
-    }
-
-    public Connection getSqlServerConexao() throws SQLException {
-        BasicDataSource sqlServerDataSource = new BasicDataSource();
+        // Configuração do BasicDataSource para SQL Server
+        sqlServerDataSource = new BasicDataSource();
         sqlServerDataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         sqlServerDataSource.setUrl("jdbc:sqlserver://54.161.72.58:1433;databaseName=medtech;trustServerCertificate=true");
         sqlServerDataSource.setUsername("sa");
         sqlServerDataSource.setPassword("urubu100");
 
+        // Inicialização do JdbcTemplate para SQL Server
+        sqlServerJdbcTemplate = new JdbcTemplate(sqlServerDataSource);
+    }
+
+    public JdbcTemplate getMysqlJdbcTemplate() {
+        return mysqlJdbcTemplate;
+    }
+
+    public JdbcTemplate getSqlServerJdbcTemplate() {
+        return sqlServerJdbcTemplate;
+    }
+
+    public Connection getMysqlConexao() throws SQLException {
+        return mysqlDataSource.getConnection();
+    }
+
+    public Connection getSqlServerConexao() throws SQLException {
         return sqlServerDataSource.getConnection();
     }
 }

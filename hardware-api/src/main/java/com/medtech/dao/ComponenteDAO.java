@@ -75,7 +75,7 @@ public class ComponenteDAO {
     }
 
     private void inserirComputadorSeNecessarioEmAmbos(String idComputador, String nomeUsuario) throws SQLException {
-        try (Connection conexaoMysql = conexaoBanco.getConexao();
+        try (Connection conexaoMysql = conexaoBanco.getMysqlConexao();
              Connection conexaoSqlServer = conexaoBanco.getSqlServerConexao()) {
             conexaoMysql.setAutoCommit(false);
             conexaoSqlServer.setAutoCommit(false);
@@ -98,7 +98,7 @@ public class ComponenteDAO {
     }
 
     private void inserirRegistroEmAmbos(double valor, String idComputador, int fkHardware) throws SQLException {
-        try (Connection conexaoMysql = conexaoBanco.getConexao();
+        try (Connection conexaoMysql = conexaoBanco.getMysqlConexao();
              Connection conexaoSqlServer = conexaoBanco.getSqlServerConexao()) {
             conexaoMysql.setAutoCommit(false);
             conexaoSqlServer.setAutoCommit(false);
