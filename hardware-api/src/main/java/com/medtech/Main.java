@@ -11,10 +11,22 @@ import com.medtech.model.componente.memoria.MonitoramentoMemoria;
 import com.medtech.model.componente.rede.MonitoramentoRede;
 import com.medtech.model.usuario.Usuario;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Main {
+
+    private static final String LOG_DIRECTORY = "C:\\Users\\Raiss\\Documents\\SPtech\\Grupo1-SegundoSemestre\\Hardware_API";
+    private static final String LOG_FILE_PATH = LOG_DIRECTORY + "\\log.txt";
 
     public static void main(String[] args) throws SQLException {
         Scanner scanner = new Scanner(System.in);
@@ -32,9 +44,11 @@ public class Main {
 
         Usuario usuario = autenticarUsuario(scanner, usuarioDAO);
         if (usuario != null && !usuario.getNomeUser().isEmpty()) {
+            logEvent("Login bem-sucedido para o usuário: " + usuario.getNomeUser());
             exibirSistema(looca);
             iniciarColetaDeDados(memoria01, cpu01, disco01, rede, componenteDAO, usuario.getNomeUser());
         } else {
+            logEvent("Falha no login para o usuário: " + (usuario != null ? usuario.getNomeUser() : "Desconhecido"));
             System.out.println("Usuário ou senha incorretos. Tente novamente mais tarde.");
         }
 
@@ -72,6 +86,7 @@ public class Main {
         }
         System.out.println("] Concluído!");
         Sistema sistema = looca.getSistema();
+        logEvent("Dados do sistema recuperados: " + sistema);
         System.out.println(sistema);
         System.out.println("=====================================");
     }
@@ -97,6 +112,8 @@ public class Main {
                 componenteDAO.inserirUsoCpu(cpu, nomeUsuario);
                 componenteDAO.inserirVelocidadeRede(velocidadeRede, cpu.getIdCPU());
 
+                logEvent("Dados coletados: Memória em uso: " + memoriaEmUso + " GB, Uso de CPU: " + usoCpu + " GHz, Armazenamento em uso: " + armazenamentoEmUso + " GB");
+
                 System.out.println("Dados atuais:");
                 System.out.println("Uso da Memória: " + String.format("%.2f", memoriaEmUso) + " GB");
                 System.out.println("Uso da CPU: " + String.format("%.2f", usoCpuGHz) + " GHz");
@@ -106,9 +123,42 @@ public class Main {
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
+                logEvent("Erro ao coletar dados: " + e.getMessage());
             } catch (SQLException e) {
+                logEvent("Erro ao inserir dados no banco de dados: " + e.getMessage());
                 System.out.println("Erro ao inserir dados no banco de dados: " + e.getMessage());
             }
+        }
+    }
+
+    public static void logEvent(String message) {
+        try {
+            Path path = Paths.get(LOG_DIRECTORY);
+
+            if (!Files.exists(path)) {
+                Files.createDirectory(path);
+            }
+
+            LocalDateTime now = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            String formatDateTime = now.format(formatter);
+
+            File log = new File(LOG_FILE_PATH);
+
+            if (!log.exists()) {
+                log.createNewFile();
+            }
+
+            FileWriter fw = new FileWriter(log, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+
+            bw.write(formatDateTime + " - " + message);
+            bw.newLine();
+
+            bw.close();
+            fw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
