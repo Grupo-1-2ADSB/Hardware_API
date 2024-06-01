@@ -25,7 +25,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static final String LOG_DIRECTORY = "C:\\Users\\Raiss\\Documents\\SPtech\\Grupo1-SegundoSemestre\\Hardware_API";
+    private static final String LOG_DIRECTORY = "Hardware_API";
     private static final String LOG_FILE_PATH = LOG_DIRECTORY + "\\log.txt";
 
     public static void main(String[] args) throws SQLException {

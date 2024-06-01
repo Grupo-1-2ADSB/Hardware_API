@@ -1,0 +1,9 @@
+2024-06-01 17:46:17 - Login bem-sucedido para o usuário: PH
+2024-06-01 17:46:18 - Dados do sistema recuperados: Sistema operacional: Windows
+Fabricante: Microsoft
+Arquitetura: 64bits
+Inicializado: 2024-06-01T00:31:58Z
+Tempo de atividade: 3 days, 00:54:54
+Permissões: Executando como usuário padrão
+
+2024-06-01 17:46:54 - Erro ao inserir dados no banco de dados: Cannot create PoolableConnectionFactory (Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".)
