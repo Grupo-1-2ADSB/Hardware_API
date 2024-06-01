@@ -34,10 +34,9 @@ public class ComponenteDAO {
         return false;
     }
 
-    private int obterFkUnidadeHospitalarDoUsuario(String nomeUsuario) throws SQLException {
+    private int obterFkUnidadeHospitalarDoUsuario(Connection conexao, String nomeUsuario) throws SQLException {
         String sql = "SELECT fkUnidadeHospitalar FROM Usuario WHERE nomeUser = ?";
-        try (Connection conexao = conexaoBanco.getConexao();
-             PreparedStatement stmt = conexao.prepareStatement(sql)) {
+        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
             stmt.setString(1, nomeUsuario);
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
@@ -50,7 +49,7 @@ public class ComponenteDAO {
 
     private void inserirComputadorSeNecessario(Connection conexao, String idComputador, String nomeUsuario) throws SQLException {
         if (!computadorExiste(conexao, idComputador)) {
-            int fkUnidadeHospitalar = obterFkUnidadeHospitalarDoUsuario(nomeUsuario);
+            int fkUnidadeHospitalar = obterFkUnidadeHospitalarDoUsuario(conexao, nomeUsuario);
             String sql = "INSERT INTO Computador (idComputador, nome, localizacao, statusPC, fkUnidadeHospitalar, fkSO) VALUES (?, ?, ?, ?, ?, ?)";
             try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
                 stmt.setString(1, idComputador);
@@ -75,25 +74,72 @@ public class ComponenteDAO {
         }
     }
 
-    public void inserirUsoMemoria(MonitoramentoMemoria memoria, String nomeUsuario) throws SQLException {
-        try (Connection conexao = conexaoBanco.getConexao()) {
-            inserirComputadorSeNecessario(conexao, cpu01.getIdCPU(), nomeUsuario);
-            inserirRegistro(conexao, memoria.getMemoriaEmUsoGB(), cpu01.getIdCPU(), 1); // 1 é o ID correspondente ao hardware de memória RAM
+    private void inserirComputadorSeNecessarioEmAmbos(String idComputador, String nomeUsuario) throws SQLException {
+        try (Connection conexaoMysql = conexaoBanco.getMysqlConexao();
+             Connection conexaoSqlServer = conexaoBanco.getSqlServerConexao()) {
+            conexaoMysql.setAutoCommit(false);
+            conexaoSqlServer.setAutoCommit(false);
+
+            try {
+                inserirComputadorSeNecessario(conexaoMysql, idComputador, nomeUsuario);
+                inserirComputadorSeNecessario(conexaoSqlServer, idComputador, nomeUsuario);
+
+                conexaoMysql.commit();
+                conexaoSqlServer.commit();
+            } catch (SQLException e) {
+                conexaoMysql.rollback();
+                conexaoSqlServer.rollback();
+                throw e;
+            } finally {
+                conexaoMysql.setAutoCommit(true);
+                conexaoSqlServer.setAutoCommit(true);
+            }
         }
+    }
+
+    private void inserirRegistroEmAmbos(double valor, String idComputador, int fkHardware) throws SQLException {
+        try (Connection conexaoMysql = conexaoBanco.getMysqlConexao();
+             Connection conexaoSqlServer = conexaoBanco.getSqlServerConexao()) {
+            conexaoMysql.setAutoCommit(false);
+            conexaoSqlServer.setAutoCommit(false);
+
+            try {
+                inserirRegistro(conexaoMysql, valor, idComputador, fkHardware);
+                inserirRegistro(conexaoSqlServer, valor, idComputador, fkHardware);
+
+                conexaoMysql.commit();
+                conexaoSqlServer.commit();
+            } catch (SQLException e) {
+                conexaoMysql.rollback();
+                conexaoSqlServer.rollback();
+                throw e;
+            } finally {
+                conexaoMysql.setAutoCommit(true);
+                conexaoSqlServer.setAutoCommit(true);
+            }
+        }
+    }
+
+    public void inserirUsoMemoria(MonitoramentoMemoria memoria, String nomeUsuario) throws SQLException {
+        inserirComputadorSeNecessarioEmAmbos(cpu01.getIdCPU(), nomeUsuario);
+        inserirRegistroEmAmbos(memoria.getMemoriaEmUsoGB(), cpu01.getIdCPU(), 1); // 1 é o ID correspondente ao hardware de memória RAM
     }
 
     public void inserirUsoArmazenamento(Armazenamento armazenamento, String nomeUsuario) throws SQLException {
-        try (Connection conexao = conexaoBanco.getConexao()) {
-            inserirComputadorSeNecessario(conexao, cpu01.getIdCPU(), nomeUsuario);
-            inserirRegistro(conexao, armazenamento.getVolumes(), cpu01.getIdCPU(), 2); // 2 é o ID correspondente ao hardware de armazenamento
-        }
+        inserirComputadorSeNecessarioEmAmbos(cpu01.getIdCPU(), nomeUsuario);
+        inserirRegistroEmAmbos(armazenamento.getVolumes(), cpu01.getIdCPU(), 2); // 2 é o ID correspondente ao hardware de armazenamento
     }
 
     public void inserirUsoCpu(MonitoramentoCpu cpu, String nomeUsuario) throws SQLException {
-        try (Connection conexao = conexaoBanco.getConexao()) {
-            inserirComputadorSeNecessario(conexao, cpu01.getIdCPU(), nomeUsuario);
-            inserirRegistro(conexao, cpu.getCpuFreqGHz(), cpu01.getIdCPU(), 3); // 3 é o ID correspondente ao hardware de CPU
-        }
+        inserirComputadorSeNecessarioEmAmbos(cpu01.getIdCPU(), nomeUsuario);
+        inserirRegistroEmAmbos(cpu.getCpuUsoGHz(), cpu01.getIdCPU(), 3); // 3 é o ID correspondente ao hardware de CPU
     }
-}
 
+    public void inserirVelocidadeRede(double velocidade, String idComputador) throws SQLException {
+        inserirComputadorSeNecessarioEmAmbos(cpu01.getIdCPU(), idComputador);
+        inserirRegistroEmAmbos(velocidade, cpu01.getIdCPU(), 4); // 4 é o ID correspondente ao hardware de rede
+    }
+
+
+
+}

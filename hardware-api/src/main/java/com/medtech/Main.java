@@ -8,6 +8,7 @@ import com.medtech.inovacao.MemoryUsageFinisher;
 import com.medtech.model.componente.armazenamento.Armazenamento;
 import com.medtech.model.componente.cpu.MonitoramentoCpu;
 import com.medtech.model.componente.memoria.MonitoramentoMemoria;
+import com.medtech.model.componente.rede.MonitoramentoRede;
 import com.medtech.model.usuario.Usuario;
 
 import java.io.BufferedWriter;
@@ -34,6 +35,7 @@ public class Main {
         Armazenamento disco01 = new Armazenamento();
         MonitoramentoMemoria memoria01 = new MonitoramentoMemoria();
         MonitoramentoCpu cpu01 = new MonitoramentoCpu();
+        MonitoramentoRede rede = new MonitoramentoRede();
 
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         ComponenteDAO componenteDAO = new ComponenteDAO();
@@ -44,7 +46,7 @@ public class Main {
         if (usuario != null && !usuario.getNomeUser().isEmpty()) {
             logEvent("Login bem-sucedido para o usuário: " + usuario.getNomeUser());
             exibirSistema(looca);
-            iniciarColetaDeDados(memoria01, cpu01, disco01, componenteDAO, usuario.getNomeUser());
+            iniciarColetaDeDados(memoria01, cpu01, disco01, rede, componenteDAO, usuario.getNomeUser());
         } else {
             logEvent("Falha no login para o usuário: " + (usuario != null ? usuario.getNomeUser() : "Desconhecido"));
             System.out.println("Usuário ou senha incorretos. Tente novamente mais tarde.");
@@ -55,12 +57,12 @@ public class Main {
 
     private static void exibirBanner() {
         System.out.println("""
-             __  __          _ _____         _    
-            |  \\/  | ___  __| |_   _|__  ___| |__ 
-            | |\\/| |/ _ \\/ _` | | |/ _ \\/ __| '_ \\
-            | |  | |  __/ (_| | | |  __/ (__| | | |
-            |_|  |_|\\___|\\__,_| |_|\\___|\\___|_| |_|
-                                                  """);
+                 __  __          _ _____         _    
+                |  \\/  | ___  __| |_   _|__  ___| |__ 
+                | |\\/| |/ _ \\/ _` | | |/ _ \\/ __| '_ \\
+                | |  | |  __/ (_| | | |  __/ (__| | | |
+                |_|  |_|\\___|\\__,_| |_|\\___|\\___|_| |_|
+                                                      """);
         System.out.println("=====================================");
     }
 
@@ -89,26 +91,34 @@ public class Main {
         System.out.println("=====================================");
     }
 
-    private static void iniciarColetaDeDados(MonitoramentoMemoria memoria, MonitoramentoCpu cpu, Armazenamento armazenamento, ComponenteDAO componenteDAO, String nomeUsuario) {
+    private static void iniciarColetaDeDados(MonitoramentoMemoria memoria, MonitoramentoCpu cpu, Armazenamento armazenamento, MonitoramentoRede rede, ComponenteDAO componenteDAO, String nomeUsuario) {
         while (true) {
             MemoryUsageFinisher.checkMemoryUsage();
             try {
                 Thread.sleep(3000);
 
+                memoria.getMemoriaEmUsoGB();
+                cpu.getCpuFreqGHz();
+                armazenamento.getVolumes();
+                rede.atualizarDadosRede();
+
                 double memoriaEmUso = memoria.getMemoriaEmUsoGB();
-                double usoCpu = cpu.getCpuFreqGHz();
+                double usoCpuGHz = cpu.getCpuUsoGHz();
                 double armazenamentoEmUso = armazenamento.getVolumes();
+                double velocidadeRede = rede.calcularVelocidadeRedeMbps();
 
                 componenteDAO.inserirUsoMemoria(memoria, nomeUsuario);
                 componenteDAO.inserirUsoArmazenamento(armazenamento, nomeUsuario);
                 componenteDAO.inserirUsoCpu(cpu, nomeUsuario);
+                componenteDAO.inserirVelocidadeRede(velocidadeRede, cpu.getIdCPU());
 
                 logEvent("Dados coletados: Memória em uso: " + memoriaEmUso + " GB, Uso de CPU: " + usoCpu + " GHz, Armazenamento em uso: " + armazenamentoEmUso + " GB");
 
                 System.out.println("Dados atuais:");
                 System.out.println("Uso da Memória: " + String.format("%.2f", memoriaEmUso) + " GB");
-                System.out.println("Uso da CPU: " + String.format("%.2f", usoCpu) + " GHz");
+                System.out.println("Uso da CPU: " + String.format("%.2f", usoCpuGHz) + " GHz");
                 System.out.println("Armazenamento em uso: " + String.format("%.2f", armazenamentoEmUso) + " GB");
+                System.out.println("Velocidade da Rede: " + String.format("%.2f", velocidadeRede) + " Mbps");
                 System.out.println();
 
             } catch (InterruptedException e) {
