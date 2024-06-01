@@ -112,7 +112,7 @@ public class Main {
                 componenteDAO.inserirUsoCpu(cpu, nomeUsuario);
                 componenteDAO.inserirVelocidadeRede(velocidadeRede, cpu.getIdCPU());
 
-                logEvent("Dados coletados: Memória em uso: " + memoriaEmUso + " GB, Uso de CPU: " + usoCpu + " GHz, Armazenamento em uso: " + armazenamentoEmUso + " GB");
+                logEvent("Dados coletados: Memória em uso: " + memoriaEmUso + " GB, Uso de CPU: " + usoCpuGHz + " GHz, Armazenamento em uso: " + armazenamentoEmUso + " GB");
 
                 System.out.println("Dados atuais:");
                 System.out.println("Uso da Memória: " + String.format("%.2f", memoriaEmUso) + " GB");
