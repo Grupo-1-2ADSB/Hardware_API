@@ -12,7 +12,7 @@ public class UsuarioDAO {
     public Usuario retornaUsuario(String userVerificar, String senhaVerificar) throws SQLException {
 
         ConexaoBanco conexaoBanco = new ConexaoBanco();
-        JdbcTemplate sqlServerConexao = conexaoBanco.getSqlServerJdbcTemplate();
+        JdbcTemplate sqlServerConexao = conexaoBanco.getMysqlJdbcTemplate();
 
         Usuario usuario = null;
         try {

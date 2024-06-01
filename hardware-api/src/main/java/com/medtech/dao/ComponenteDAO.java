@@ -9,9 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class ComponenteDAO {
 
@@ -47,32 +45,6 @@ public class ComponenteDAO {
             }
         }
         throw new SQLException("Usuário não encontrado: " + nomeUsuario);
-    }
-
-    private static List<String> validarExistenciaMinimadeHardware(Connection conexao, String idComputador) throws SQLException{
-        String sql = "SELECT nomeHardware FROM Hardware WHERE fkComputador = ?";
-        List<String> hardwares = new ArrayList<>();
-        try (PreparedStatement stmt = conexao.prepareStatement(sql)){
-            stmt.setString(1, idComputador);
-            try (ResultSet rs = stmt.executeQuery()) {
-                while (rs.next()) {
-                    hardwares.add(rs.getString("nomeHardware"));
-                }
-            }
-        }
-        return hardwares;
-    }
-
-    private void inserirHardware(Connection conexao, String idHardware, Double valor, String nomeHardware, String descricaoHardware, String idComputador) throws  SQLException{
-        String sql = "INSERT INTO Hardware(idHardware, valor, nomeHardware, descricaoHardware, fkComputador) VALUES(?,?,?,?,?)";
-        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
-            stmt.setString(1, idHardware);
-            stmt.setDouble(2, valor);
-            stmt.setString(3, nomeHardware);
-            stmt.setString(4, descricaoHardware);
-            stmt.setString(5,idComputador);
-            stmt.executeUpdate();
-        }
     }
 
     private void inserirComputadorSeNecessario(Connection conexao, String idComputador, String nomeUsuario) throws SQLException {
@@ -160,6 +132,14 @@ public class ComponenteDAO {
 
     public void inserirUsoCpu(MonitoramentoCpu cpu, String nomeUsuario) throws SQLException {
         inserirComputadorSeNecessarioEmAmbos(cpu01.getIdCPU(), nomeUsuario);
-        inserirRegistroEmAmbos(cpu.getCpuFreqGHz(), cpu01.getIdCPU(), 3); // 3 é o ID correspondente ao hardware de CPU
+        inserirRegistroEmAmbos(cpu.getCpuUsoGHz(), cpu01.getIdCPU(), 3); // 3 é o ID correspondente ao hardware de CPU
     }
+
+    public void inserirVelocidadeRede(double velocidade, String idComputador) throws SQLException {
+        inserirComputadorSeNecessarioEmAmbos(cpu01.getIdCPU(), idComputador);
+        inserirRegistroEmAmbos(velocidade, cpu01.getIdCPU(), 4); // 4 é o ID correspondente ao hardware de rede
+    }
+
+
+
 }
