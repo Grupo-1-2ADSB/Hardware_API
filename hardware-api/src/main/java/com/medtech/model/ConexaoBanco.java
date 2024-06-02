@@ -27,7 +27,7 @@ public class ConexaoBanco {
         // Configuração do BasicDataSource para SQL Server
         sqlServerDataSource = new BasicDataSource();
         sqlServerDataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        sqlServerDataSource.setUrl("jdbc:sqlserver://54.161.72.58:1433;databaseName=medtech;trustServerCertificate=true");
+        sqlServerDataSource.setUrl("jdbc:sqlserver://54.161.72.58:1433;databaseName=medtech;encrypt=true;trustServerCertificate=true");
         sqlServerDataSource.setUsername("sa");
         sqlServerDataSource.setPassword("urubu100");
 
