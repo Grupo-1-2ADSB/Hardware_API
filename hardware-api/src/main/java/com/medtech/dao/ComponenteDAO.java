@@ -24,19 +24,18 @@ public class ComponenteDAO {
 
     private boolean temConexaoInternet() {
         try {
-            InetAddress.getByName("www.google.com").isReachable(3000);
-            return true;
+            return InetAddress.getByName("www.google.com").isReachable(3000);
         } catch (Exception e) {
             return false;
         }
     }
 
-    private Connection obterConexaoParaOperacao() throws SQLException {
-        if (temConexaoInternet()) {
-            return conexaoBanco.getSqlServerConexao();
-        } else {
-            return conexaoBanco.getMysqlConexao();
-        }
+    private Connection obterConexaoSqlServer() throws SQLException {
+        return conexaoBanco.getSqlServerConexao();
+    }
+
+    private Connection obterConexaoMysql() throws SQLException {
+        return conexaoBanco.getMysqlConexao();
     }
 
     private boolean computadorExiste(Connection conexao, String idComputador) throws SQLException {
@@ -80,14 +79,26 @@ public class ComponenteDAO {
     }
 
     private void inserirComputadorSeNecessarioEmAmbos(String idComputador, String nomeUsuario) throws SQLException {
-        try (Connection conexao = obterConexaoParaOperacao()) {
-            inserirComputadorSeNecessario(conexao, idComputador, nomeUsuario);
+        boolean internetDisponivel = temConexaoInternet();
+        try (Connection conexaoMysql = obterConexaoMysql()) {
+            inserirComputadorSeNecessario(conexaoMysql, idComputador, nomeUsuario);
+        }
+        if (internetDisponivel) {
+            try (Connection conexaoSqlServer = obterConexaoSqlServer()) {
+                inserirComputadorSeNecessario(conexaoSqlServer, idComputador, nomeUsuario);
+            }
         }
     }
 
     private void inserirRegistroEmAmbos(double valor, String idComputador, int fkHardware) throws SQLException {
-        try (Connection conexao = obterConexaoParaOperacao()) {
-            inserirRegistro(conexao, valor, idComputador, fkHardware);
+        boolean internetDisponivel = temConexaoInternet();
+        try (Connection conexaoMysql = obterConexaoMysql()) {
+            inserirRegistro(conexaoMysql, valor, idComputador, fkHardware);
+        }
+        if (internetDisponivel) {
+            try (Connection conexaoSqlServer = obterConexaoSqlServer()) {
+                inserirRegistro(conexaoSqlServer, valor, idComputador, fkHardware);
+            }
         }
     }
 
@@ -125,5 +136,4 @@ public class ComponenteDAO {
         inserirComputadorSeNecessarioEmAmbos(cpu01.getIdCPU(), idComputador);
         inserirRegistroEmAmbos(velocidade, cpu01.getIdCPU(), 4); // 4 é o ID correspondente ao hardware de rede
     }
-
 }
