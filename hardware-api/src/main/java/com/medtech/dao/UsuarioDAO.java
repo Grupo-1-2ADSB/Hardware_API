@@ -5,23 +5,24 @@ import com.medtech.model.usuario.Usuario;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import java.sql.SQLException;
-
 public class UsuarioDAO {
+    private final ConexaoBanco conexaoBanco;
 
-    public Usuario retornaUsuario(String userVerificar, String senhaVerificar) throws SQLException {
+    public UsuarioDAO() {
+        this.conexaoBanco = new ConexaoBanco();
+    }
 
-        ConexaoBanco conexaoBanco = new ConexaoBanco();
-        JdbcTemplate sqlServerConexao = conexaoBanco.getMysqlJdbcTemplate();
-
+    public Usuario retornaUsuario(String userVerificar, String senhaVerificar) {
         Usuario usuario = null;
         try {
+            JdbcTemplate sqlServerConexao = conexaoBanco.getSqlServerJdbcTemplate();
             String query = "SELECT * FROM usuario WHERE nomeUser = ? AND senha = ?";
             usuario = sqlServerConexao.queryForObject(query, new Object[]{userVerificar, senhaVerificar}, new BeanPropertyRowMapper<>(Usuario.class));
-        } catch (Exception e) {
             return usuario;
+        } catch (Exception ex) {
+            return null;
         }
-
-        return usuario;
     }
 }
+
+

@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
+import java.net.InetAddress;
 
 public class ComponenteDAO {
 
@@ -20,6 +21,22 @@ public class ComponenteDAO {
     }
 
     private MonitoramentoCpu cpu01 = new MonitoramentoCpu();
+
+    private boolean temConexaoInternet() {
+        try {
+            return InetAddress.getByName("www.google.com").isReachable(3000);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public Connection obterConexaoSqlServer() throws SQLException {
+        return conexaoBanco.getSqlServerConexao();
+    }
+
+    public Connection obterConexaoMysql() throws SQLException {
+        return conexaoBanco.getMysqlConexao();
+    }
 
     private boolean computadorExiste(Connection conexao, String idComputador) throws SQLException {
         String sql = "SELECT COUNT(*) FROM Computador WHERE idComputador = ?";
@@ -32,19 +49,6 @@ public class ComponenteDAO {
             }
         }
         return false;
-    }
-
-    private int obterFkUnidadeHospitalarDoUsuario(Connection conexao, String nomeUsuario) throws SQLException {
-        String sql = "SELECT fkUnidadeHospitalar FROM Usuario WHERE nomeUser = ?";
-        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
-            stmt.setString(1, nomeUsuario);
-            try (ResultSet rs = stmt.executeQuery()) {
-                if (rs.next()) {
-                    return rs.getInt("fkUnidadeHospitalar");
-                }
-            }
-        }
-        throw new SQLException("Usuário não encontrado: " + nomeUsuario);
     }
 
     private void inserirComputadorSeNecessario(Connection conexao, String idComputador, String nomeUsuario) throws SQLException {
@@ -75,50 +79,82 @@ public class ComponenteDAO {
     }
 
     private void inserirComputadorSeNecessarioEmAmbos(String idComputador, String nomeUsuario) throws SQLException {
-        try (Connection conexaoMysql = conexaoBanco.getMysqlConexao();
-             Connection conexaoSqlServer = conexaoBanco.getSqlServerConexao()) {
-            conexaoMysql.setAutoCommit(false);
-            conexaoSqlServer.setAutoCommit(false);
-
-            try {
-                inserirComputadorSeNecessario(conexaoMysql, idComputador, nomeUsuario);
+        boolean internetDisponivel = temConexaoInternet();
+        try (Connection conexaoMysql = obterConexaoMysql()) {
+            inserirComputadorSeNecessario(conexaoMysql, idComputador, nomeUsuario);
+        }
+        if (internetDisponivel) {
+            try (Connection conexaoSqlServer = obterConexaoSqlServer()) {
                 inserirComputadorSeNecessario(conexaoSqlServer, idComputador, nomeUsuario);
-
-                conexaoMysql.commit();
-                conexaoSqlServer.commit();
-            } catch (SQLException e) {
-                conexaoMysql.rollback();
-                conexaoSqlServer.rollback();
-                throw e;
-            } finally {
-                conexaoMysql.setAutoCommit(true);
-                conexaoSqlServer.setAutoCommit(true);
             }
         }
     }
 
     private void inserirRegistroEmAmbos(double valor, String idComputador, int fkHardware) throws SQLException {
-        try (Connection conexaoMysql = conexaoBanco.getMysqlConexao();
-             Connection conexaoSqlServer = conexaoBanco.getSqlServerConexao()) {
-            conexaoMysql.setAutoCommit(false);
-            conexaoSqlServer.setAutoCommit(false);
-
-            try {
-                inserirRegistro(conexaoMysql, valor, idComputador, fkHardware);
+        boolean internetDisponivel = temConexaoInternet();
+        try (Connection conexaoMysql = obterConexaoMysql()) {
+            inserirRegistro(conexaoMysql, valor, idComputador, fkHardware);
+        }
+        if (internetDisponivel) {
+            try (Connection conexaoSqlServer = obterConexaoSqlServer()) {
                 inserirRegistro(conexaoSqlServer, valor, idComputador, fkHardware);
-
-                conexaoMysql.commit();
-                conexaoSqlServer.commit();
-            } catch (SQLException e) {
-                conexaoMysql.rollback();
-                conexaoSqlServer.rollback();
-                throw e;
-            } finally {
-                conexaoMysql.setAutoCommit(true);
-                conexaoSqlServer.setAutoCommit(true);
             }
         }
     }
+
+    private int obterFkUnidadeHospitalarDoUsuario(Connection conexao, String nomeUsuario) throws SQLException {
+        String sql = "SELECT fkUnidadeHospitalar FROM Usuario WHERE nomeUser = ?";
+        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+            stmt.setString(1, nomeUsuario);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("fkUnidadeHospitalar");
+                }
+            }
+        }
+        throw new SQLException("Usuário não encontrado: " + nomeUsuario);
+    }
+
+    public String obterNome(Connection conexao, String idComputador) throws SQLException {
+        String sql = "SELECT nome FROM Computador WHERE idComputador = ?";
+        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+            stmt.setString(1, idComputador);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getString("nome");
+                }
+            }
+        }
+        throw new SQLException("Computador não encontrado: " + idComputador);
+    }
+
+    public String obterLocalizacao(Connection conexao, String idComputador) throws SQLException {
+        String sql = "SELECT localizacao FROM Computador WHERE idComputador = ?";
+        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+            stmt.setString(1, idComputador);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getString("localizacao");
+                }
+            }
+        }
+        throw new SQLException("Computador não encontrado: " + idComputador);
+    }
+
+//    public String obterIpRede(Connection conexao, String idComputador) throws SQLException {
+//        String sql = "SELECT ipRede FROM Computador WHERE idComputador = ?";
+//        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+//            stmt.setString(1, idComputador);
+//            try (ResultSet rs = stmt.executeQuery()) {
+//                if (rs.next()) {
+//                    return rs.getString("ipRede");
+//                }
+//            }
+//        }
+//        throw new SQLException("Computador não encontrado: " + idComputador);
+//    }
+
+    // Métodos de inserção
 
     public void inserirUsoMemoria(MonitoramentoMemoria memoria, String nomeUsuario) throws SQLException {
         inserirComputadorSeNecessarioEmAmbos(cpu01.getIdCPU(), nomeUsuario);
@@ -139,7 +175,4 @@ public class ComponenteDAO {
         inserirComputadorSeNecessarioEmAmbos(cpu01.getIdCPU(), idComputador);
         inserirRegistroEmAmbos(velocidade, cpu01.getIdCPU(), 4); // 4 é o ID correspondente ao hardware de rede
     }
-
-
-
 }
