@@ -29,4 +29,8 @@ public class MonitoramentoCpu extends Hardware {
         return cpuId;
     }
 
+    public double getCpuFreqTotalGHz() {
+        return getCpuFreqGHz(); // Frequência total da CPU em GHz
+    }
+
 }
