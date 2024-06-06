@@ -8,8 +8,8 @@ import com.medtech.model.componente.Hardware;
 import java.util.List;
 
 public class Armazenamento extends Hardware {
-    private Looca looca = new Looca();
-    private List<Volume> volumes = looca.getGrupoDeDiscos().getVolumes();
+    private static Looca looca = new Looca();
+    private static List<Volume> volumes = looca.getGrupoDeDiscos().getVolumes();
 
     public Armazenamento(String nomeHardware, String unidadeDeMedida, Double medida, String descricaoHardware) {
         super(nomeHardware, unidadeDeMedida, medida, descricaoHardware);
@@ -31,9 +31,16 @@ public class Armazenamento extends Hardware {
 
 
         double totalVolumeInGB = volumeAtual / (1024 * 1024 * 1024);
-
-
         return totalVolumeInGB;
+    }
+
+    public static double getVolumeTotalGB() {
+        double volumeTotal = 0.0;
+        for (Volume volume : volumes) {
+            volumeTotal += volume.getTotal();
+        }
+
+        return volumeTotal / (1024.0 * 1024.0 * 1024.0); // Convertendo de bytes para gigabytes
     }
 
 }

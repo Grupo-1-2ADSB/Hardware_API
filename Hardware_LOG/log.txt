@@ -198,3 +198,54 @@ Permissões: Executando como usuário padrão
 2024-06-05 22:19:21 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".
 2024-06-05 22:19:54 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".
 2024-06-05 22:20:27 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".
+2024-06-06 18:12:57 - Login bem-sucedido para o usuário: PH
+2024-06-06 18:12:58 - Dados do sistema recuperados: Sistema operacional: Windows
+Fabricante: Microsoft
+Arquitetura: 64bits
+Inicializado: 2024-06-01T00:31:58Z
+Tempo de atividade: 8 days, 01:21:31
+Permissões: Executando como usuário padrão
+
+2024-06-06 18:14:25 - Login bem-sucedido para o usuário: PH
+2024-06-06 18:14:26 - Dados do sistema recuperados: Sistema operacional: Windows
+Fabricante: Microsoft
+Arquitetura: 64bits
+Inicializado: 2024-06-01T00:31:58Z
+Tempo de atividade: 8 days, 01:22:59
+Permissões: Executando como usuário padrão
+
+2024-06-06 18:14:33 - Erro ao inserir dados no banco de dados: Unknown column 'nome' in 'where clause'
+2024-06-06 18:14:40 - Erro ao inserir dados no banco de dados: Unknown column 'nome' in 'where clause'
+2024-06-06 18:14:46 - Erro ao inserir dados no banco de dados: Unknown column 'nome' in 'where clause'
+2024-06-06 18:17:23 - Login bem-sucedido para o usuário: PH
+2024-06-06 18:17:24 - Dados do sistema recuperados: Sistema operacional: Windows
+Fabricante: Microsoft
+Arquitetura: 64bits
+Inicializado: 2024-06-01T00:31:58Z
+Tempo de atividade: 8 days, 01:25:57
+Permissões: Executando como usuário padrão
+
+2024-06-06 18:17:30 - Erro ao inserir dados no banco de dados: Unknown column 'nome' in 'where clause'
+2024-06-06 18:17:34 - Erro ao inserir dados no banco de dados: Unknown column 'nome' in 'where clause'
+2024-06-06 18:17:40 - Erro ao inserir dados no banco de dados: Unknown column 'nome' in 'where clause'
+2024-06-06 18:17:43 - Erro ao inserir dados no banco de dados: Unknown column 'nome' in 'where clause'
+2024-06-06 18:17:47 - Erro ao inserir dados no banco de dados: Unknown column 'nome' in 'where clause'
+2024-06-06 18:28:45 - Login bem-sucedido para o usuário: PH
+2024-06-06 18:28:46 - Dados do sistema recuperados: Sistema operacional: Windows
+Fabricante: Microsoft
+Arquitetura: 64bits
+Inicializado: 2024-06-01T00:31:58Z
+Tempo de atividade: 8 days, 01:37:19
+Permissões: Executando como usuário padrão
+
+2024-06-06 18:28:58 - Dados coletados: Memória em uso: 6.915702819824219 GB, Uso de CPU: 0.026040861210788285 GHz, Armazenamento em uso: 208.49303817749023 GB
+2024-06-06 18:29:08 - Dados coletados: Memória em uso: 6.915927886962891 GB, Uso de CPU: 0.026040861210788285 GHz, Armazenamento em uso: 208.49303817749023 GB
+2024-06-06 18:29:18 - Dados coletados: Memória em uso: 6.9576263427734375 GB, Uso de CPU: 0.026040861210788285 GHz, Armazenamento em uso: 208.49303817749023 GB
+2024-06-06 18:29:28 - Dados coletados: Memória em uso: 7.074123382568359 GB, Uso de CPU: 0.026040861210788285 GHz, Armazenamento em uso: 208.49303817749023 GB
+2024-06-06 18:29:38 - Dados coletados: Memória em uso: 7.049922943115234 GB, Uso de CPU: 0.026040861210788285 GHz, Armazenamento em uso: 208.49303817749023 GB
+2024-06-06 18:29:47 - Dados coletados: Memória em uso: 7.070575714111328 GB, Uso de CPU: 0.026040861210788285 GHz, Armazenamento em uso: 208.49303817749023 GB
+2024-06-06 18:29:54 - Dados coletados: Memória em uso: 7.067470550537109 GB, Uso de CPU: 0.026040861210788285 GHz, Armazenamento em uso: 208.49303817749023 GB
+2024-06-06 18:30:04 - Dados coletados: Memória em uso: 7.078926086425781 GB, Uso de CPU: 0.026040861210788285 GHz, Armazenamento em uso: 208.49303817749023 GB
+2024-06-06 18:30:11 - Dados coletados: Memória em uso: 7.049919128417969 GB, Uso de CPU: 0.026040861210788285 GHz, Armazenamento em uso: 208.49303817749023 GB
+2024-06-06 18:30:21 - Dados coletados: Memória em uso: 7.050159454345703 GB, Uso de CPU: 0.026040861210788285 GHz, Armazenamento em uso: 208.49303817749023 GB
+2024-06-06 18:30:33 - Dados coletados: Memória em uso: 7.049625396728516 GB, Uso de CPU: 0.026040861210788285 GHz, Armazenamento em uso: 208.49303817749023 GB

@@ -5,16 +5,18 @@ import com.github.britooo.looca.api.group.memoria.Memoria;
 import com.medtech.model.componente.Hardware;
 
 public class MonitoramentoMemoria extends Hardware {
-    private Looca looca = new Looca();
-    private Memoria memoria = looca.getMemoria();
+    private static Looca looca = new Looca();
+    private static Memoria memoria = looca.getMemoria();
 
     public double getMemoriaEmUsoGB() {
         return memoria.getEmUso() / (1024.0 * 1024.0 * 1024.0);
     }
 
+    public static double getMemoria() {
+        return memoria.getTotal() / (1024.0 * 1024.0 * 1024.0); // Retorna em GB
+    }
+
     public void exibeMemoria() {
-        //System.out.printf("Memória Total: %.2f GB%n", getMemoriaTotalGB());
-        //System.out.printf("Memória Disponível: %.2f GB%n", getMemoriaDisponivelGB());
         System.out.printf("Memória em Uso: %.2f GB%n", getMemoriaEmUsoGB());
     }
 }
