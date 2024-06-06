@@ -1,0 +1,200 @@
+2024-06-01 17:46:17 - Login bem-sucedido para o usuário: PH
+2024-06-01 17:46:18 - Dados do sistema recuperados: Sistema operacional: Windows
+Fabricante: Microsoft
+Arquitetura: 64bits
+Inicializado: 2024-06-01T00:31:58Z
+Tempo de atividade: 3 days, 00:54:54
+Permissões: Executando como usuário padrão
+
+2024-06-01 17:46:54 - Erro ao inserir dados no banco de dados: Cannot create PoolableConnectionFactory (Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".)
+2024-06-02 15:18:18 - Login bem-sucedido para o usuário: PH
+2024-06-02 15:18:19 - Dados do sistema recuperados: Sistema operacional: Windows
+Fabricante: Microsoft
+Arquitetura: 64bits
+Inicializado: 2024-06-02T16:19:49Z
+Tempo de atividade: 17 days, 19:47:57
+Permissões: Executando como usuário padrão
+
+2024-06-02 15:18:30 - Dados coletados: Memória em uso: 5.163230895996094 GB, Uso de CPU: 0.41182354285714284 GHz, Armazenamento em uso: 246.1977653503418 GB
+2024-06-02 15:18:37 - Dados coletados: Memória em uso: 5.572319030761719 GB, Uso de CPU: 0.41182354285714284 GHz, Armazenamento em uso: 246.1977653503418 GB
+2024-06-02 15:18:43 - Dados coletados: Memória em uso: 5.830024719238281 GB, Uso de CPU: 0.41182354285714284 GHz, Armazenamento em uso: 246.1977653503418 GB
+2024-06-02 15:18:50 - Dados coletados: Memória em uso: 5.7915191650390625 GB, Uso de CPU: 0.41182354285714284 GHz, Armazenamento em uso: 246.1977653503418 GB
+2024-06-02 15:19:39 - Falha no login para o usuário: Desconhecido
+2024-06-02 15:21:07 - Falha no login para o usuário: Desconhecido
+2024-06-02 18:58:05 - Login bem-sucedido para o usuário: devJohn
+2024-06-02 18:58:06 - Dados do sistema recuperados: Sistema operacional: Windows
+Fabricante: Microsoft
+Arquitetura: 64bits
+Inicializado: 2024-06-02T19:42:50Z
+Tempo de atividade: 17 days, 23:27:44
+Permissões: Executando como usuário padrão
+
+2024-06-02 18:58:10 - Erro ao inserir dados no banco de dados: Cannot create PoolableConnectionFactory (Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
+2024-06-02 18:58:13 - Erro ao inserir dados no banco de dados: Cannot create PoolableConnectionFactory (Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
+2024-06-02 18:58:16 - Erro ao inserir dados no banco de dados: Cannot create PoolableConnectionFactory (Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
+2024-06-02 18:58:19 - Erro ao inserir dados no banco de dados: Cannot create PoolableConnectionFactory (Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
+2024-06-02 18:58:23 - Erro ao inserir dados no banco de dados: Cannot create PoolableConnectionFactory (Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
+2024-06-02 18:58:26 - Erro ao inserir dados no banco de dados: Cannot create PoolableConnectionFactory (Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
+2024-06-02 18:58:29 - Erro ao inserir dados no banco de dados: Cannot create PoolableConnectionFactory (Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
+2024-06-02 18:58:33 - Erro ao inserir dados no banco de dados: Cannot create PoolableConnectionFactory (Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
+2024-06-05 20:41:47 - Falha no login para o usuário: Desconhecido
+2024-06-05 20:43:09 - Falha no login para o usuário: Desconhecido
+2024-06-05 20:59:28 - Erro ao inserir dados no banco de dados: Cannot create PoolableConnectionFactory (Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".)
+2024-06-05 21:21:45 - Dados coletados: Memória em uso: 5.996906280517578 GB, Uso de CPU: 0.06398504323440057 GHz, Armazenamento em uso: 56.88330841064453 GB
+2024-06-05 21:21:52 - Dados coletados: Memória em uso: 5.998752593994141 GB, Uso de CPU: 0.06398504323440057 GHz, Armazenamento em uso: 56.88330841064453 GB
+2024-06-05 21:22:00 - Dados coletados: Memória em uso: 5.995418548583984 GB, Uso de CPU: 0.06398504323440057 GHz, Armazenamento em uso: 56.88330841064453 GB
+2024-06-05 21:22:07 - Dados coletados: Memória em uso: 5.997852325439453 GB, Uso de CPU: 0.06398504323440057 GHz, Armazenamento em uso: 56.88330841064453 GB
+2024-06-05 21:22:14 - Dados coletados: Memória em uso: 5.996742248535156 GB, Uso de CPU: 0.06398504323440057 GHz, Armazenamento em uso: 56.88330841064453 GB
+2024-06-05 21:22:21 - Dados coletados: Memória em uso: 5.996898651123047 GB, Uso de CPU: 0.06398504323440057 GHz, Armazenamento em uso: 56.88330841064453 GB
+2024-06-05 21:22:29 - Dados coletados: Memória em uso: 5.996620178222656 GB, Uso de CPU: 0.06398504323440057 GHz, Armazenamento em uso: 56.88330841064453 GB
+2024-06-05 21:22:36 - Dados coletados: Memória em uso: 5.996604919433594 GB, Uso de CPU: 0.06398504323440057 GHz, Armazenamento em uso: 56.88330841064453 GB
+2024-06-05 21:22:43 - Dados coletados: Memória em uso: 5.995677947998047 GB, Uso de CPU: 0.06398504323440057 GHz, Armazenamento em uso: 56.88330841064453 GB
+2024-06-05 22:00:11 - Login bem-sucedido para o usuário: PH
+2024-06-05 22:00:13 - Dados do sistema recuperados: Sistema operacional: Windows
+Fabricante: Microsoft
+Arquitetura: 64bits
+Inicializado: 2024-04-21T23:45:27Z
+Tempo de atividade: 45 days, 01:17:31
+Permissões: Executando como usuário padrão
+
+2024-06-05 22:00:29 - Dados coletados: Memória em uso: 6.3345794677734375 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:00:36 - Dados coletados: Memória em uso: 6.419277191162109 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:00:42 - Dados coletados: Memória em uso: 6.432147979736328 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:00:48 - Dados coletados: Memória em uso: 6.4693756103515625 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:00:54 - Dados coletados: Memória em uso: 6.499256134033203 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:01:00 - Dados coletados: Memória em uso: 6.493267059326172 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:01:06 - Dados coletados: Memória em uso: 6.530391693115234 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:01:12 - Dados coletados: Memória em uso: 6.519046783447266 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:01:18 - Dados coletados: Memória em uso: 6.4912261962890625 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:01:24 - Dados coletados: Memória em uso: 6.469966888427734 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:01:30 - Dados coletados: Memória em uso: 6.4713897705078125 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:01:36 - Dados coletados: Memória em uso: 6.470134735107422 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:01:42 - Dados coletados: Memória em uso: 6.5229949951171875 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:01:48 - Dados coletados: Memória em uso: 6.527881622314453 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:01:54 - Dados coletados: Memória em uso: 6.569915771484375 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:01:59 - Dados coletados: Memória em uso: 6.592002868652344 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:02:09 - Dados coletados: Memória em uso: 6.461063385009766 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:02:15 - Dados coletados: Memória em uso: 6.457275390625 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:02:21 - Dados coletados: Memória em uso: 6.517688751220703 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:02:28 - Dados coletados: Memória em uso: 6.5875091552734375 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:02:33 - Dados coletados: Memória em uso: 6.609748840332031 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:02:39 - Dados coletados: Memória em uso: 6.611667633056641 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:02:45 - Dados coletados: Memória em uso: 6.6040191650390625 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:02:52 - Dados coletados: Memória em uso: 6.603397369384766 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:02:58 - Dados coletados: Memória em uso: 6.601245880126953 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:03:04 - Dados coletados: Memória em uso: 6.601642608642578 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:03:09 - Dados coletados: Memória em uso: 6.600131988525391 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:03:15 - Dados coletados: Memória em uso: 6.593849182128906 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:03:21 - Dados coletados: Memória em uso: 6.593475341796875 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:03:27 - Dados coletados: Memória em uso: 6.576831817626953 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:03:33 - Dados coletados: Memória em uso: 6.5729827880859375 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:03:39 - Dados coletados: Memória em uso: 6.571773529052734 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:03:45 - Dados coletados: Memória em uso: 6.5717315673828125 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:03:50 - Dados coletados: Memória em uso: 6.587593078613281 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:03:56 - Dados coletados: Memória em uso: 6.585437774658203 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:04:02 - Dados coletados: Memória em uso: 6.572959899902344 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:04:08 - Dados coletados: Memória em uso: 6.573261260986328 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:04:14 - Dados coletados: Memória em uso: 6.592887878417969 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:04:20 - Dados coletados: Memória em uso: 6.606964111328125 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:04:27 - Dados coletados: Memória em uso: 6.633060455322266 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:04:33 - Dados coletados: Memória em uso: 6.635837554931641 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:04:39 - Dados coletados: Memória em uso: 6.632087707519531 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:04:46 - Dados coletados: Memória em uso: 6.627513885498047 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:04:51 - Dados coletados: Memória em uso: 6.620399475097656 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:04:58 - Dados coletados: Memória em uso: 6.6195831298828125 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:05:04 - Dados coletados: Memória em uso: 6.625026702880859 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:05:10 - Dados coletados: Memória em uso: 6.627288818359375 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:05:15 - Dados coletados: Memória em uso: 6.616172790527344 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:05:21 - Dados coletados: Memória em uso: 6.603946685791016 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:05:27 - Dados coletados: Memória em uso: 6.6109466552734375 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:05:33 - Dados coletados: Memória em uso: 6.623447418212891 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:05:39 - Dados coletados: Memória em uso: 6.645206451416016 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:05:45 - Dados coletados: Memória em uso: 6.635215759277344 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:05:51 - Dados coletados: Memória em uso: 6.6302947998046875 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:05:57 - Dados coletados: Memória em uso: 6.622222900390625 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:06:03 - Dados coletados: Memória em uso: 6.638942718505859 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:06:09 - Dados coletados: Memória em uso: 6.6480560302734375 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:06:15 - Dados coletados: Memória em uso: 6.708156585693359 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:06:27 - Dados coletados: Memória em uso: 6.541271209716797 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:06:33 - Dados coletados: Memória em uso: 6.51861572265625 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:06:39 - Dados coletados: Memória em uso: 6.5569610595703125 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:06:48 - Dados coletados: Memória em uso: 6.541481018066406 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:06:54 - Dados coletados: Memória em uso: 6.532283782958984 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:07:00 - Dados coletados: Memória em uso: 6.48455810546875 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:07:05 - Dados coletados: Memória em uso: 6.491016387939453 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:07:11 - Dados coletados: Memória em uso: 6.500785827636719 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:07:17 - Dados coletados: Memória em uso: 6.391857147216797 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:07:23 - Dados coletados: Memória em uso: 6.391857147216797 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:07:29 - Dados coletados: Memória em uso: 6.372310638427734 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:07:35 - Dados coletados: Memória em uso: 6.373588562011719 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:07:40 - Dados coletados: Memória em uso: 6.354671478271484 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:07:46 - Dados coletados: Memória em uso: 6.354732513427734 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:07:52 - Dados coletados: Memória em uso: 6.377555847167969 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:07:58 - Dados coletados: Memória em uso: 6.375926971435547 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:08:07 - Dados coletados: Memória em uso: 6.377239227294922 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:08:12 - Dados coletados: Memória em uso: 6.3749542236328125 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:08:18 - Dados coletados: Memória em uso: 6.363670349121094 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:08:24 - Dados coletados: Memória em uso: 6.362983703613281 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:08:30 - Dados coletados: Memória em uso: 6.353477478027344 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:08:36 - Dados coletados: Memória em uso: 6.351982116699219 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:08:42 - Dados coletados: Memória em uso: 6.3501129150390625 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:08:48 - Dados coletados: Memória em uso: 6.354011535644531 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:08:54 - Dados coletados: Memória em uso: 6.352619171142578 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:09:00 - Dados coletados: Memória em uso: 6.377201080322266 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:09:07 - Dados coletados: Memória em uso: 6.3918914794921875 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:09:13 - Dados coletados: Memória em uso: 6.397373199462891 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:09:19 - Dados coletados: Memória em uso: 6.399528503417969 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:09:25 - Dados coletados: Memória em uso: 6.404296875 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:09:31 - Dados coletados: Memória em uso: 6.400520324707031 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:09:37 - Dados coletados: Memória em uso: 6.404903411865234 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:09:43 - Dados coletados: Memória em uso: 6.405097961425781 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:09:49 - Dados coletados: Memória em uso: 6.397186279296875 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:09:55 - Dados coletados: Memória em uso: 6.3936920166015625 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:10:01 - Dados coletados: Memória em uso: 6.382911682128906 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:10:07 - Dados coletados: Memória em uso: 6.400402069091797 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:10:13 - Dados coletados: Memória em uso: 6.438850402832031 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:10:19 - Dados coletados: Memória em uso: 6.455097198486328 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:10:25 - Dados coletados: Memória em uso: 6.44622802734375 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:10:31 - Dados coletados: Memória em uso: 6.4510498046875 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:10:37 - Dados coletados: Memória em uso: 6.475421905517578 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:10:43 - Dados coletados: Memória em uso: 6.487205505371094 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:10:50 - Dados coletados: Memória em uso: 6.5087890625 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:10:56 - Dados coletados: Memória em uso: 6.515937805175781 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:11:02 - Dados coletados: Memória em uso: 6.516094207763672 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:11:09 - Dados coletados: Memória em uso: 6.4938507080078125 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:11:15 - Dados coletados: Memória em uso: 6.464641571044922 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:11:21 - Dados coletados: Memória em uso: 6.465114593505859 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:11:27 - Dados coletados: Memória em uso: 6.464759826660156 GB, Uso de CPU: 0.05039391377852916 GHz, Armazenamento em uso: 57.40480041503906 GB
+2024-06-05 22:11:33 - Erro ao inserir dados no banco de dados: Connection reset
+2024-06-05 22:12:06 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".
+2024-06-05 22:12:39 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".
+2024-06-05 22:13:13 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".
+2024-06-05 22:13:46 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".
+2024-06-05 22:14:19 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".
+2024-06-05 22:14:52 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".
+2024-06-05 22:15:25 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".
+2024-06-05 22:15:59 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".
+2024-06-05 22:16:32 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".
+2024-06-05 22:17:05 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".
+2024-06-05 22:17:41 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".
+2024-06-05 22:18:14 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".
+2024-06-05 22:18:47 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".
+2024-06-05 22:19:21 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".
+2024-06-05 22:19:54 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".
+2024-06-05 22:20:27 - Erro ao inserir dados no banco de dados: Falha na conexão TCP/IP com o host 54.161.72.58, porta 1433. Erro: "Connect timed out. Verifique as propriedades da conexão. Verifique se uma instância do SQL Server está sendo executada no host e se está aceitando conexões TCP/IP na porta. Verifique se as conexões TCP na porta não foram bloqueadas por um firewall.".

@@ -46,6 +46,36 @@
             <artifactId>mysql-connector-j</artifactId>
             <version>8.1.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.13.0</version> <!-- Use a versão mais recente disponível -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20211205</version> <!-- or the latest version available -->
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.slack.api/bolt -->
+        <dependency>
+            <groupId>com.slack.api</groupId>
+            <artifactId>bolt</artifactId>
+            <version>1.39.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.slack.api/bolt-servlet -->
+        <dependency>
+            <groupId>com.slack.api</groupId>
+            <artifactId>bolt-servlet</artifactId>
+            <version>1.39.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version> <!-- ou a versão mais recente disponível -->
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>

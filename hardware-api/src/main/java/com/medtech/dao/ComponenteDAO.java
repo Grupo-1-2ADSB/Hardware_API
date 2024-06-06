@@ -30,11 +30,11 @@ public class ComponenteDAO {
         }
     }
 
-    private Connection obterConexaoSqlServer() throws SQLException {
+    public Connection obterConexaoSqlServer() throws SQLException {
         return conexaoBanco.getSqlServerConexao();
     }
 
-    private Connection obterConexaoMysql() throws SQLException {
+    public Connection obterConexaoMysql() throws SQLException {
         return conexaoBanco.getMysqlConexao();
     }
 
@@ -114,6 +114,45 @@ public class ComponenteDAO {
         }
         throw new SQLException("Usuário não encontrado: " + nomeUsuario);
     }
+
+    public String obterNome(Connection conexao, String idComputador) throws SQLException {
+        String sql = "SELECT nome FROM Computador WHERE idComputador = ?";
+        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+            stmt.setString(1, idComputador);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getString("nome");
+                }
+            }
+        }
+        throw new SQLException("Computador não encontrado: " + idComputador);
+    }
+
+    public String obterLocalizacao(Connection conexao, String idComputador) throws SQLException {
+        String sql = "SELECT localizacao FROM Computador WHERE idComputador = ?";
+        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+            stmt.setString(1, idComputador);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getString("localizacao");
+                }
+            }
+        }
+        throw new SQLException("Computador não encontrado: " + idComputador);
+    }
+
+//    public String obterIpRede(Connection conexao, String idComputador) throws SQLException {
+//        String sql = "SELECT ipRede FROM Computador WHERE idComputador = ?";
+//        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+//            stmt.setString(1, idComputador);
+//            try (ResultSet rs = stmt.executeQuery()) {
+//                if (rs.next()) {
+//                    return rs.getString("ipRede");
+//                }
+//            }
+//        }
+//        throw new SQLException("Computador não encontrado: " + idComputador);
+//    }
 
     // Métodos de inserção
 

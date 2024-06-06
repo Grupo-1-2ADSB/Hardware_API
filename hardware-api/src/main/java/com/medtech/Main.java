@@ -25,7 +25,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static final String LOG_DIRECTORY = "Hardware_API";
+    private static final String LOG_DIRECTORY = "Hardware_LOG";
     private static final String LOG_FILE_PATH = LOG_DIRECTORY + "\\log.txt";
 
     public static void main(String[] args) throws SQLException {
@@ -91,9 +91,9 @@ public class Main {
         System.out.println("=====================================");
     }
 
-    private static void iniciarColetaDeDados(MonitoramentoMemoria memoria, MonitoramentoCpu cpu, Armazenamento armazenamento, MonitoramentoRede rede, ComponenteDAO componenteDAO, String nomeUsuario) {
+    private static void iniciarColetaDeDados(MonitoramentoMemoria memoria, MonitoramentoCpu cpu, Armazenamento armazenamento, MonitoramentoRede rede, ComponenteDAO componenteDAO, String nomeUsuario) throws SQLException {
         while (true) {
-          //  MemoryUsageFinisher.checkMemoryUsage();
+            MemoryUsageFinisher.checkMemoryUsage();
             try {
                 Thread.sleep(3000);
 
