@@ -93,19 +93,24 @@ public class Main {
 
     private static void iniciarColetaDeDados(MonitoramentoMemoria memoria, MonitoramentoCpu cpu, Armazenamento armazenamento, MonitoramentoRede rede, ComponenteDAO componenteDAO, String nomeUsuario) throws SQLException {
         while (true) {
-            MemoryUsageFinisher.checkMemoryUsage();
+            //MemoryUsageFinisher.checkMemoryUsage();
             try {
                 Thread.sleep(3000);
+                Looca looca = new Looca();
 
                 memoria.getMemoriaEmUsoGB();
                 cpu.getCpuFreqGHz();
                 armazenamento.getVolumes();
                 rede.atualizarDadosRede();
 
+                cpu.setCpuUso(looca.getProcessador().getUso());
+                cpu.setCpuFreq(looca.getProcessador().getFrequencia());
+
                 double memoriaEmUso = memoria.getMemoriaEmUsoGB();
                 double usoCpuGHz = cpu.getCpuUsoGHz();
                 double armazenamentoEmUso = armazenamento.getVolumes();
                 double velocidadeRede = rede.calcularVelocidadeRedeMbps();
+                double usoCpuPorcentagem = cpu.getCpuUsoPorcentagem();
 
                 componenteDAO.inserirUsoMemoria(memoria, nomeUsuario);
                 componenteDAO.inserirUsoArmazenamento(armazenamento, nomeUsuario);
@@ -117,6 +122,7 @@ public class Main {
                 System.out.println("Dados atuais:");
                 System.out.println("Uso da Memória: " + String.format("%.2f", memoriaEmUso) + " GB");
                 System.out.println("Uso da CPU: " + String.format("%.2f", usoCpuGHz) + " GHz");
+                System.out.println("Porcentagem de uso da CPU: " + String.format("%.2f", usoCpuPorcentagem) + "%");
                 System.out.println("Armazenamento em uso: " + String.format("%.2f", armazenamentoEmUso) + " GB");
                 System.out.println("Velocidade da Rede: " + String.format("%.2f", velocidadeRede) + " Mbps");
                 System.out.println();
