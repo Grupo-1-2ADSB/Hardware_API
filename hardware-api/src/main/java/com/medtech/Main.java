@@ -93,7 +93,7 @@ public class Main {
 
     private static void iniciarColetaDeDados(MonitoramentoMemoria memoria, MonitoramentoCpu cpu, Armazenamento armazenamento, MonitoramentoRede rede, ComponenteDAO componenteDAO, String nomeUsuario) throws SQLException {
         while (true) {
-            //MemoryUsageFinisher.checkMemoryUsage();
+            MemoryUsageFinisher.checkMemoryUsage();
             try {
                 Thread.sleep(3000);
                 Looca looca = new Looca();
@@ -101,7 +101,7 @@ public class Main {
                 memoria.getMemoriaEmUsoGB();
                 cpu.getCpuFreqGHz();
                 armazenamento.getVolumes();
-                rede.atualizarDadosRede();
+                MonitoramentoRede.velocidadeRede();
 
                 cpu.setCpuUso(looca.getProcessador().getUso());
                 cpu.setCpuFreq(looca.getProcessador().getFrequencia());
@@ -109,7 +109,7 @@ public class Main {
                 double memoriaEmUso = memoria.getMemoriaEmUsoGB();
                 double usoCpuGHz = cpu.getCpuUsoGHz();
                 double armazenamentoEmUso = armazenamento.getVolumes();
-                double velocidadeRede = rede.calcularVelocidadeRedeMbps();
+                double velocidadeRede = MonitoramentoRede.velocidadeRede();
                 double usoCpuPorcentagem = cpu.getCpuUsoPorcentagem();
 
                 componenteDAO.inserirUsoMemoria(memoria, nomeUsuario);
