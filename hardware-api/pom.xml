@@ -76,6 +76,11 @@
             <version>4.0.1</version> <!-- ou a versão mais recente disponível -->
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>com.github.bertrandmartel</groupId>
+            <artifactId>speed-test-lib</artifactId>
+            <version>1.32.1</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -106,5 +111,12 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
 
 </project>
