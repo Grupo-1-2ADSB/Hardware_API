@@ -3,8 +3,14 @@ com\medtech\model\usuario\Usuario.class
 com\medtech\dao\UsuarioDAO.class
 com\medtech\model\componente\memoria\MonitoramentoMemoria.class
 com\medtech\model\componente\rede\MonitoramentoRede.class
+com\medtech\inovacao\MemoryUsageFinisher.class
+com\medtech\slack\ChatUsuarioEspecifico.class
+com\medtech\model\componente\armazenamento\Armazenamento.class
+com\medtech\slack\ChatGeralRAMAlta.class
+com\medtech\dao\InserirHardwareDAO.class
 com\medtech\Main.class
 com\medtech\model\componente\cpu\MonitoramentoCpu.class
+com\medtech\slack\ChatGeral.class
 com\medtech\model\ConexaoBanco.class
-com\medtech\model\componente\armazenamento\Armazenamento.class
+com\medtech\inovacao\ProcessInfo.class
 com\medtech\dao\ComponenteDAO.class
