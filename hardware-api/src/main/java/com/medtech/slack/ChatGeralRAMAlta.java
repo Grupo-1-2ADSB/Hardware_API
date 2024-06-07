@@ -13,12 +13,12 @@ import java.sql.SQLException;
 
 public class ChatGeralRAMAlta {
     private static final String SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
-    private static double ramUsage = MemoryUsageFinisher.getSystemMemoryUsage(); // Por exemplo, 85% de uso da RAM
-
-
-    public static void main(String[] args) throws SQLException {
-            enviarMensagem();
-    }
+//    private static double ramUsage = MemoryUsageFinisher.getSystemMemoryUsage(); // Por exemplo, 85% de uso da RAM
+//
+//
+//    public static void main(String[] args) throws SQLException {
+//            enviarMensagem();
+//    }
 
     public static void enviarMensagem() throws SQLException {
         JSONObject generalMessage = createSlackMessage();
@@ -151,19 +151,19 @@ public class ChatGeralRAMAlta {
                                                                         )
                                                                 )
                                                         )
-                                                        .put(new JSONObject()
-                                                                .put("type", "rich_text_section")
-                                                                .put("elements", new JSONArray()
-                                                                        .put(new JSONObject()
-                                                                                .put("type", "text")
-                                                                                .put("text", "Endereço IP: ")
-                                                                        )
-                                                                        .put(new JSONObject()
-                                                                                .put("type", "text")
-                                                                                .put("text", "XX.XXX.XXX")
-                                                                        )
-                                                                )
-                                                        )
+//                                                        .put(new JSONObject()
+//                                                                .put("type", "rich_text_section")
+//                                                                .put("elements", new JSONArray()
+//                                                                        .put(new JSONObject()
+//                                                                                .put("type", "text")
+//                                                                                .put("text", "Endereço IP: ")
+//                                                                        )
+//                                                                        .put(new JSONObject()
+//                                                                                .put("type", "text")
+//                                                                                .put("text", "XX.XXX.XXX")
+//                                                                        )
+//                                                                )
+//                                                        )
                                                 )
                                         )
                                 )
