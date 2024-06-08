@@ -101,7 +101,8 @@ public class Main {
                 memoria.getMemoriaEmUsoGB();
                 cpu.getCpuFreqGHz();
                 armazenamento.getVolumes();
-                MonitoramentoRede.velocidadeRede();
+                rede.calcularVelocidadeRede();
+                //MonitoramentoRede.velocidadeRede();
 
                 cpu.setCpuUso(looca.getProcessador().getUso());
                 cpu.setCpuFreq(looca.getProcessador().getFrequencia());
@@ -109,7 +110,7 @@ public class Main {
                 double memoriaEmUso = memoria.getMemoriaEmUsoGB();
                 double usoCpuGHz = cpu.getCpuUsoGHz();
                 double armazenamentoEmUso = armazenamento.getVolumes();
-                double velocidadeRede = MonitoramentoRede.velocidadeRede();
+                double velocidadeRede = rede.calcularVelocidadeRede();
                 double usoCpuPorcentagem = cpu.getCpuUsoPorcentagem();
 
                 componenteDAO.inserirUsoMemoria(memoria, nomeUsuario);
