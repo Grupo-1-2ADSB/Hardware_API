@@ -9,6 +9,7 @@ C:\Users\lucas\Desktop\lucaspagliarini\Hardware_API\hardware-api\src\main\java\c
 C:\Users\lucas\Desktop\lucaspagliarini\Hardware_API\hardware-api\src\main\java\com\medtech\inovacao\MemoryUsageFinisher.java
 C:\Users\lucas\Desktop\lucaspagliarini\Hardware_API\hardware-api\src\main\java\com\medtech\dao\ComponenteDAO.java
 C:\Users\lucas\Desktop\lucaspagliarini\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\rede\MonitoramentoRede.java
+C:\Users\lucas\Desktop\lucaspagliarini\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\cpu\IpAddressFetcher.java
 C:\Users\lucas\Desktop\lucaspagliarini\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\memoria\MonitoramentoMemoria.java
 C:\Users\lucas\Desktop\lucaspagliarini\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\armazenamento\Armazenamento.java
 C:\Users\lucas\Desktop\lucaspagliarini\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\Hardware.java
