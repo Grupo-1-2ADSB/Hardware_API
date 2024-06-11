@@ -23,7 +23,7 @@ public class ComponenteDAO {
 
     private boolean temConexaoInternet() {
         try {
-            return true;
+            return InetAddress.getByName("www.google.com").isReachable(3000);
         } catch (Exception e) {
             return false;
         }
