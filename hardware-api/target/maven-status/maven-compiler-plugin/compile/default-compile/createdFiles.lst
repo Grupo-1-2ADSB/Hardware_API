@@ -7,7 +7,6 @@ com\medtech\inovacao\MemoryUsageFinisher.class
 com\medtech\slack\ChatUsuarioEspecifico.class
 com\medtech\model\componente\armazenamento\Armazenamento.class
 com\medtech\slack\ChatGeralRAMAlta.class
-com\medtech\model\componente\cpu\IpAddressFetcher.class
 com\medtech\dao\InserirHardwareDAO.class
 com\medtech\Main.class
 com\medtech\model\componente\cpu\MonitoramentoCpu.class

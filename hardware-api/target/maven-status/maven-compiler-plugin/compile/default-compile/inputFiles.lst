@@ -1,17 +1,17 @@
-C:\Users\Beatriz Brandão\OneDrive - SPTech School\PI\Hardware_API\hardware-api\src\main\java\com\medtech\inovacao\ProcessInfo.java
-C:\Users\Beatriz Brandão\OneDrive - SPTech School\PI\Hardware_API\hardware-api\src\main\java\com\medtech\dao\ComponenteDAO.java
-C:\Users\Beatriz Brandão\OneDrive - SPTech School\PI\Hardware_API\hardware-api\src\main\java\com\medtech\dao\UsuarioDAO.java
-C:\Users\Beatriz Brandão\OneDrive - SPTech School\PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\rede\MonitoramentoRede.java
-C:\Users\Beatriz Brandão\OneDrive - SPTech School\PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\Hardware.java
-C:\Users\Beatriz Brandão\OneDrive - SPTech School\PI\Hardware_API\hardware-api\src\main\java\com\medtech\dao\InserirHardwareDAO.java
-C:\Users\Beatriz Brandão\OneDrive - SPTech School\PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\ConexaoBanco.java
-C:\Users\Beatriz Brandão\OneDrive - SPTech School\PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\cpu\MonitoramentoCpu.java
-C:\Users\Beatriz Brandão\OneDrive - SPTech School\PI\Hardware_API\hardware-api\src\main\java\com\medtech\slack\ChatGeralRAMAlta.java
-C:\Users\Beatriz Brandão\OneDrive - SPTech School\PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\armazenamento\Armazenamento.java
-C:\Users\Beatriz Brandão\OneDrive - SPTech School\PI\Hardware_API\hardware-api\src\main\java\com\medtech\inovacao\MemoryUsageFinisher.java
-C:\Users\Beatriz Brandão\OneDrive - SPTech School\PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\usuario\Usuario.java
-C:\Users\Beatriz Brandão\OneDrive - SPTech School\PI\Hardware_API\hardware-api\src\main\java\com\medtech\slack\ChatGeral.java
-C:\Users\Beatriz Brandão\OneDrive - SPTech School\PI\Hardware_API\hardware-api\src\main\java\com\medtech\Main.java
-C:\Users\Beatriz Brandão\OneDrive - SPTech School\PI\Hardware_API\hardware-api\src\main\java\com\medtech\slack\ChatUsuarioEspecifico.java
-C:\Users\Beatriz Brandão\OneDrive - SPTech School\PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\cpu\IpAddressFetcher.java
-C:\Users\Beatriz Brandão\OneDrive - SPTech School\PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\memoria\MonitoramentoMemoria.java
+C:\Users\lucas\Desktop\PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\Hardware.java
+C:\Users\lucas\Desktop\PI\Hardware_API\hardware-api\src\main\java\com\medtech\slack\ChatGeral.java
+C:\Users\lucas\Desktop\PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\memoria\MonitoramentoMemoria.java
+C:\Users\lucas\Desktop\PI\Hardware_API\hardware-api\src\main\java\com\medtech\inovacao\ProcessInfo.java
+C:\Users\lucas\Desktop\PI\Hardware_API\hardware-api\src\main\java\com\medtech\slack\ChatGeralRAMAlta.java
+C:\Users\lucas\Desktop\PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\cpu\IpAddressFetcher.java
+C:\Users\lucas\Desktop\PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\usuario\Usuario.java
+C:\Users\lucas\Desktop\PI\Hardware_API\hardware-api\src\main\java\com\medtech\dao\InserirHardwareDAO.java
+C:\Users\lucas\Desktop\PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\rede\MonitoramentoRede.java
+C:\Users\lucas\Desktop\PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\armazenamento\Armazenamento.java
+C:\Users\lucas\Desktop\PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\ConexaoBanco.java
+C:\Users\lucas\Desktop\PI\Hardware_API\hardware-api\src\main\java\com\medtech\Main.java
+C:\Users\lucas\Desktop\PI\Hardware_API\hardware-api\src\main\java\com\medtech\dao\ComponenteDAO.java
+C:\Users\lucas\Desktop\PI\Hardware_API\hardware-api\src\main\java\com\medtech\dao\UsuarioDAO.java
+C:\Users\lucas\Desktop\PI\Hardware_API\hardware-api\src\main\java\com\medtech\slack\ChatUsuarioEspecifico.java
+C:\Users\lucas\Desktop\PI\Hardware_API\hardware-api\src\main\java\com\medtech\inovacao\MemoryUsageFinisher.java
+C:\Users\lucas\Desktop\PI\Hardware_API\hardware-api\src\main\java\com\medtech\model\componente\cpu\MonitoramentoCpu.java
