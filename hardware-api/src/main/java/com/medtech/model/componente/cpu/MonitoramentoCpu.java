@@ -5,7 +5,7 @@ import com.medtech.model.componente.Hardware;
 
 public class MonitoramentoCpu extends Hardware {
     private Looca looca = new Looca();
-    private String cpuId = IpAddressFetcher.getIpAddress();
+    private String cpuId = looca.getProcessador().getId();
     private Long cpuFreq = looca.getProcessador().getFrequencia(); // Em Hz
     private Double cpuUso = looca.getProcessador().getUso();
 
