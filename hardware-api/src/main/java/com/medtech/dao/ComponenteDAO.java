@@ -5,6 +5,9 @@ import com.medtech.model.componente.armazenamento.Armazenamento;
 import com.medtech.model.componente.cpu.MonitoramentoCpu;
 import com.medtech.model.componente.memoria.MonitoramentoMemoria;
 
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.Socket;
 import java.sql.*;
 import java.util.Date;
 import java.net.InetAddress;
@@ -21,20 +24,24 @@ public class ComponenteDAO {
 
     private MonitoramentoCpu cpu01 = new MonitoramentoCpu();
 
-    private boolean temConexaoInternet() {
-        try {
-            return InetAddress.getByName("www.google.com").isReachable(3000);
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
     public Connection obterConexaoSqlServer() throws SQLException {
         return conexaoBanco.getSqlServerConexao();
     }
 
     public Connection obterConexaoMysql() throws SQLException {
         return conexaoBanco.getMysqlConexao();
+    }
+
+    public static boolean temConexaoInternet() {
+        Socket socket = new Socket();
+        try {
+            int timeout = 3000;
+            socket.connect(new InetSocketAddress("www.google.com", 80), timeout);
+            socket.close();
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
     }
 
     private boolean computadorExiste(Connection conexao, String idComputador) throws SQLException {
