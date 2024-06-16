@@ -42,9 +42,9 @@
         </dependency>
         <!-- Driver do servidor de banco MYSQL -->
         <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <version>8.1.0</version>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.27</version> <!-- Ajuste a versão conforme necessário -->
         </dependency>
 
         <dependency>

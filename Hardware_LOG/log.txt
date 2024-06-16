@@ -3044,3 +3044,31 @@ Permissões: Executando como usuário padrão
 2024-06-10 17:42:00 - Dados coletados: Memória em uso: 6.372966766357422 GB, Uso de CPU: 0.027721618717918114 GHz, Armazenamento em uso: 208.91283798217773 GB
 2024-06-10 17:42:11 - Dados coletados: Memória em uso: 6.375942230224609 GB, Uso de CPU: 0.49359657320872274 GHz, Armazenamento em uso: 208.91283798217773 GB
 2024-06-10 17:42:18 - Dados coletados: Memória em uso: 6.369449615478516 GB, Uso de CPU: 0.0 GHz, Armazenamento em uso: 208.91283798217773 GB
+2024-06-15 01:15:06 - Login bem-sucedido para o usuário: PH
+2024-06-15 01:15:07 - Dados do sistema recuperados: Sistema operacional: Windows
+Fabricante: Microsoft
+Arquitetura: 64bits
+Inicializado: 2024-06-15T02:07:27Z
+Tempo de atividade: 30 days, 05:44:25
+Permissões: Executando como usuário padrão
+
+2024-06-15 01:15:15 - Erro ao inserir dados no banco de dados: Cannot create PoolableConnectionFactory (Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
+2024-06-15 01:15:20 - Erro ao inserir dados no banco de dados: Cannot create PoolableConnectionFactory (Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
+2024-06-15 23:10:53 - Login bem-sucedido para o usuário: Maria_luiza
+2024-06-15 23:10:54 - Dados do sistema recuperados: Sistema operacional: Windows
+Fabricante: Microsoft
+Arquitetura: 64bits
+Inicializado: 2024-06-16T01:01:51Z
+Tempo de atividade: 31 days, 03:40:10
+Permissões: Executando como usuário padrão
+
+2024-06-15 23:11:00 - Erro ao inserir dados no banco de dados: Cannot create PoolableConnectionFactory (Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
+2024-06-15 23:11:05 - Erro ao inserir dados no banco de dados: Cannot create PoolableConnectionFactory (Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)

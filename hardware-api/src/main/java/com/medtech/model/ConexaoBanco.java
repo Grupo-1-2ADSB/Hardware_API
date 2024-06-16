@@ -17,9 +17,9 @@ public class ConexaoBanco {
         // Configuração do BasicDataSource para MySQL
         mysqlDataSource = new BasicDataSource();
         mysqlDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        mysqlDataSource.setUrl("jdbc:mysql://localhost:3306/medtech");
-        mysqlDataSource.setUsername("user_medtech");
-        mysqlDataSource.setPassword("URUBU100");
+        mysqlDataSource.setUrl("jdbc:mysql://localhost:3306/medtech?user=root&password=urubu100&useUnicode=true&characterEncoding=UTF-8");
+        mysqlDataSource.setUsername("root");
+        mysqlDataSource.setPassword("urubu100");
 
         // Inicialização do JdbcTemplate para MySQL
         mysqlJdbcTemplate = new JdbcTemplate(mysqlDataSource);
